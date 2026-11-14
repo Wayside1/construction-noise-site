@@ -195,3 +195,20 @@ table.data th { background: var(--paper-2); }
 
 .home-hero-img { margin: 28px 0 8px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
 .home-hero-img img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; max-height: 460px; object-fit: cover; }
+
+/* Explore the options dropdown */
+.dd { position: relative; }
+.dd-btn { background: none; border: 0; font: inherit; color: var(--ink-2); font-size: .93rem; font-weight: 500; padding: 8px 11px; border-radius: 7px; cursor: pointer; }
+.dd-btn:hover, .dd.open .dd-btn { background: var(--paper-2); color: var(--ink); }
+.dd-btn span { font-size: .75em; margin-left: 2px; }
+.dd-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; min-width: 300px; background: #fff; border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 12px 32px rgba(20,33,43,.12); padding: 8px; z-index: 60; }
+.dd.open .dd-menu { display: block; }
+@media (hover: hover) and (min-width: 861px) { .dd:hover .dd-menu, .dd:focus-within .dd-menu { display: block; } .dd:hover .dd-btn { background: var(--paper-2); color: var(--ink); } .dd::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 8px; } }
+.nav .dd-menu a { display: block; padding: 9px 12px; border-radius: 7px; white-space: nowrap; }
+.nav .dd-menu a.dd-all { border-top: 1px solid var(--line); margin-top: 6px; padding-top: 11px; color: var(--accent-2); font-weight: 600; border-radius: 0 0 7px 7px; }
+@media (max-width: 860px) {
+  .dd-btn { display: none; }
+  .dd-menu { display: block; position: static; box-shadow: none; border: 0; padding: 0 0 6px; min-width: 0; }
+  .dd-menu::before { content: 'Explore the options'; display: block; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 8px 11px 4px; }
+  .nav .dd-menu a { white-space: normal; }
+}

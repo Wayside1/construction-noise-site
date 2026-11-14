@@ -1,0 +1,72 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { optionPages } from '../../data/content';
+import { SITE } from '../../data/site';
+export async function getStaticPaths() {
+  const all = await optionPages();
+  return all.map((o) => ({ params: { slug: o.id }, props: { o, all } }));
+}
+const { o, all } = Astro.props;
+const d = o.data;
+const { Content } = await render(o);
+const others = all.filter((x: any) => x.id !== o.id);
+const path = `/options/${o.id}`;
+const jsonld: any[] = [
+  { '@context': 'https://schema.org', '@type': 'Article', headline: d.title, description: d.summary,
+    author: { '@type': 'Person', name: 'Caleb Shaw', url: `${SITE.url}/about#author` },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: SITE.url + path, ...(d.hero_image_url ? { image: new URL(d.hero_image_url, SITE.url).href } : {}) },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Explore the options', item: SITE.url + '/options' },
+    { '@type': 'ListItem', position: 3, name: d.title, item: SITE.url + path } ] },
+];
+if (d.faqs.length) jsonld.push({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: d.faqs.map((f: any) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })) });
+---
+<Base title={d.meta_title} description={d.meta_description} path={path} image={d.hero_image_url} jsonld={jsonld}>
+  <article class="wrap" style="padding-top:40px">
+    <div class="read">
+      <div class="crumbs"><a href="/">Home</a> / <a href="/options">Explore the options</a></div>
+      <div class="eyebrow">Explore the options</div>
+      <h1>{d.title}</h1>
+      <div class="answer"><strong>In brief</strong>{d.summary}</div>
+      {d.hero_image_url && (
+        <figure class="fig" style="margin:26px 0">
+          <img src={d.hero_image_url} alt={d.hero_image_alt || ''} style="height:auto;max-height:440px" />
+          {d.hero_caption && <figcaption>{d.hero_caption}</figcaption>}
+        </figure>
+      )}
+      <div class="prose"><Content /></div>
+
+      {d.faqs.length > 0 && (
+        <section style="margin-top:40px">
+          <h2>Common questions</h2>
+          {d.faqs.map((f: any) => (
+            <details class="faq"><summary>{f.question}<span aria-hidden="true">+</span></summary><p>{f.answer}</p></details>
+          ))}
+        </section>
+      )}
+
+      <div class="card" style="margin-top:36px;background:var(--teal-bg);border:0">
+        <h3>Not sure which option fits your site?</h3>
+        <p>Tell us what the noisy activity is, how close the neighbours are and how long the work runs, and we'll point you to what's likely to work.</p>
+        <p style="margin-top:14px"><a class="btn" href="/GetAssistance?who=contractor">Describe your site</a></p>
+        <p class="small" style="margin-top:12px">Live near a site? See <a href="/ComplaintGuide">how to complain so something happens</a>.</p>
+      </div>
+
+      {d.related.length > 0 && (
+        <section style="margin-top:36px">
+          <h2>Related guides</h2>
+          <div class="grid">{d.related.map((r: any) => <a class="card" href={r.href}><h3 style="font-size:1rem">{r.title}</h3></a>)}</div>
+        </section>
+      )}
+
+      <section style="margin-top:36px">
+        <h2>Other options</h2>
+        <div class="grid g2">{others.map((x: any) => <a class="card" href={`/options/${x.id}`}><h3 style="font-size:1rem">{x.data.title}</h3><p>{x.data.card_text}</p></a>)}</div>
+      </section>
+      <p class="disclosure">General guidance, not legal or engineering advice. {SITE.supportLine}</p>
+    </div>
+  </article>
+</Base>

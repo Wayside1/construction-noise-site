@@ -68,7 +68,15 @@ const orgLd = {
       </a>
       <button class="menu-btn" aria-expanded="false" aria-controls="nav" id="menu-btn">Menu</button>
       <nav class="nav" id="nav" aria-label="Main">
-        {NAV.map((n) => (
+        {NAV.map((n) => n.menu ? (
+          <div class="dd">
+            <button type="button" class="dd-btn" aria-expanded="false" aria-haspopup="true">{n.label} <span aria-hidden="true">▾</span></button>
+            <div class="dd-menu">
+              {n.menu.map((m) => <a href={m.href} aria-current={current === m.href ? 'page' : undefined}>{m.label}</a>)}
+              <a href={n.href} class="dd-all">All options →</a>
+            </div>
+          </div>
+        ) : (
           <a href={n.href} class={n.cta ? 'cta' : undefined} aria-current={current === n.href ? 'page' : undefined}>{n.label}</a>
         ))}
       </nav>
@@ -98,6 +106,7 @@ const orgLd = {
           <h4>Contractors</h4>
           <ul>
             <li><a href="/ContractorGuide">Contractor guide</a></li>
+            <li><a href="/options">Explore the options</a></li>
             <li><a href="/MachineNoise">Machine noise levels</a></li>
             <li><a href="/learning-centre/bs-5228-2009-what-contractors-need-to-know">BS 5228 explained</a></li>
             <li><a href="/GetAssistance?who=contractor">Ask about your site</a></li>
@@ -106,7 +115,7 @@ const orgLd = {
         <div>
           <h4>Site</h4>
           <ul>
-            <li><a href="/LearningCentre">Library</a></li>
+            <li><a href="/LearningCentre">Learning Centre</a></li>
             <li><a href="/news">News & Guides</a></li>
             <li><a href="/FAQ">FAQ</a></li>
             <li><a href="/about">About</a></li>
@@ -129,6 +138,12 @@ const orgLd = {
     (function(){
       var b = document.getElementById('menu-btn'), n = document.getElementById('nav');
       b.addEventListener('click', function(){ var o = n.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+      document.querySelectorAll('.dd').forEach(function(dd){
+        var btn = dd.querySelector('.dd-btn');
+        btn.addEventListener('click', function(e){ e.stopPropagation(); var o = dd.classList.toggle('open'); btn.setAttribute('aria-expanded', o); });
+        dd.addEventListener('keydown', function(e){ if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded', false); btn.focus(); } });
+      });
+      document.addEventListener('click', function(){ document.querySelectorAll('.dd.open').forEach(function(dd){ dd.classList.remove('open'); dd.querySelector('.dd-btn').setAttribute('aria-expanded', false); }); });
       var box = document.getElementById('cookie');
       function get(){ try { return localStorage.getItem('cn-consent'); } catch(e){ return null; } }
       function set(v){ try { localStorage.setItem('cn-consent', v); } catch(e){} gtag('consent','update',{ analytics_storage: v }); box.classList.remove('show'); }

@@ -16,12 +16,18 @@ export const CATEGORIES: Record<string, string> = {
   'product-focus': 'Product Focus',
 };
 
-export const NAV = [
-  { label: 'Residents', href: '/ComplaintGuide' },
-  { label: 'Contractors', href: '/ContractorGuide' },
-  { label: 'Library', href: '/LearningCentre' },
+export const OPTIONS_MENU = [
+  { label: 'Acoustic barriers up to 2 metres high', href: '/options/acoustic-barriers-up-to-2m' },
+  { label: 'Acoustic barriers up to 8 metres high', href: '/options/acoustic-barriers-up-to-8m' },
+  { label: 'Transparent acoustic barriers', href: '/options/transparent-acoustic-barriers' },
+  { label: 'Rock breaker shrouds', href: '/options/rock-breaker-shrouds' },
+  { label: 'Pile rig shrouds', href: '/options/pile-rig-shrouds' },
+];
+
+export const NAV: { label: string; href: string; cta?: boolean; menu?: { label: string; href: string }[] }[] = [
+  { label: 'Explore the options', href: '/options', menu: OPTIONS_MENU },
+  { label: 'Learning Centre', href: '/LearningCentre' },
   { label: 'News & Guides', href: '/news' },
-  { label: 'Machine Noise', href: '/MachineNoise' },
   { label: 'FAQ', href: '/FAQ' },
   { label: 'Get Help', href: '/GetAssistance', cta: true },
 ];

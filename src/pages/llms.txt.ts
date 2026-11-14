@@ -1,9 +1,10 @@
 import type { APIRoute } from 'astro';
-import { publishedArticles, learningArticles } from '../data/content';
+import { publishedArticles, learningArticles, optionPages } from '../data/content';
 import { SITE } from '../data/site';
 export const GET: APIRoute = async () => {
   const arts = await publishedArticles();
   const lib = await learningArticles();
+  const opts = await optionPages();
   const u = SITE.url;
   const txt = `# Construction Noise Guide (construction-noise.co.uk)
 
@@ -18,11 +19,15 @@ export const GET: APIRoute = async () => {
 - [Construction noise calculator](${u}/NoiseCalculator): Distance and barrier estimates from a phone reading.
 - [Get help](${u}/GetAssistance): Residents and contractors can describe a noise problem and get pointed to the right people or measures.
 
+## Noise-control options
+
+${opts.map((o) => `- [${o.data.title}](${u}/options/${o.id}): ${o.data.meta_description}`).join('\n')}
+
 ## Articles
 
 ${arts.map((a) => `- [${a.data.title}](${u}/articles/${a.id}): ${a.data.meta_description || a.data.summary}`).join('\n')}
 
-## Library
+## Learning Centre
 
 ${lib.map((a) => `- [${a.data.title}](${u}/learning-centre/${a.id}): ${a.data.summary}`).join('\n')}
 

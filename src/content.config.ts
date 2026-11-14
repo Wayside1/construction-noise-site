@@ -37,4 +37,23 @@ const learning = defineCollection({
   }),
 });
 
-export const collections = { articles, learning };
+// Explore the options: one page per noise-control option, /options/<slug>
+const options = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/options' }),
+  schema: z.object({
+    title: z.string(),
+    menu_label: z.string(),
+    order: z.number(),
+    card_text: z.string(),
+    meta_title: z.string(),
+    meta_description: z.string(),
+    summary: z.string(),
+    hero_image_url: z.string().optional(),
+    hero_image_alt: z.string().optional(),
+    hero_caption: z.string().optional(),
+    faqs: z.array(z.object({ question: z.string(), answer: z.string() })).default([]),
+    related: z.array(z.object({ title: z.string(), href: z.string() })).default([]),
+  }),
+});
+
+export const collections = { articles, learning, options };

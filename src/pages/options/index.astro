@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import { optionPages } from '../../data/content';
+const all = await optionPages();
+---
+<Base title="Construction Noise Control Options: Barriers & Shrouds" description="Compare the main ways to control construction noise: acoustic barriers up to 2 m and up to 8 m, transparent barriers, rock breaker shrouds and pile rig shrouds.">
+  <PageHead eyebrow="Explore the options" title="What actually reduces construction noise" lede="The main noise-control options, what each one is good for, how much difference it makes and where it falls short. Most sites need more than one." />
+  <div class="wrap block">
+    <div class="grid g2">
+      {all.map((o) => (
+        <a class="card" href={`/options/${o.id}`}>
+          <h3>{o.data.title}</h3>
+          <p>{o.data.card_text}</p>
+          <span class="more">Read more →</span>
+        </a>
+      ))}
+    </div>
+    <div class="note note-teal" style="margin-top:32px">
+      <strong>Start at the source.</strong> Treating the loudest machine directly (a shroud or enclosure) usually beats screening the whole site boundary. Barriers work best close to the noise, with no gaps, and high enough to hide the plant from the windows that matter.
+    </div>
+  </div>
+</Base>

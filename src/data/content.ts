@@ -7,3 +7,7 @@ export async function learningArticles() {
   const all = await getCollection('learning');
   return all.sort((a, b) => a.data.order - b.data.order);
 }
+export async function optionPages() {
+  const all = await getCollection('options');
+  return all.sort((a, b) => a.data.order - b.data.order);
+}
