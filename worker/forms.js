@@ -2,7 +2,7 @@
 // stores each in KV (SUBMISSIONS) and emails it to Caleb via Email Routing (SEND_EMAIL binding,
 // destination calebshaw@live.com). Deployed as Worker "construction-noise-forms".
 import { EmailMessage } from 'cloudflare:email';
-const ALLOWED = [/^https:\/\/([a-z0-9-]+\.)?construction-noise\.pages\.dev$/, /^https:\/\/(www\.)?construction-noise\.co\.uk$/, /^http:\/\/localhost(:\d+)?$/];
+const ALLOWED = [/^https:\/\/([a-z0-9-]+\.)?construction-noise(-site)?\.pages\.dev$/, /^https:\/\/(www\.)?construction-noise\.co\.uk$/, /^http:\/\/localhost(:\d+)?$/];
 const cors = (origin) => ({
   'Access-Control-Allow-Origin': ALLOWED.some((r) => r.test(origin || '')) ? origin : 'https://construction-noise.co.uk',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
