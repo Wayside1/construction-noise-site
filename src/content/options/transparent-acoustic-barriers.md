@@ -68,7 +68,7 @@ The other limits are the same as for any barrier:
 - Reflects sound instead of absorbing it
 - Clear curtains are heavy for their size, and rigid panels more so
 - Clarity can drop with scratches, dirt and weather
-- Fewer published test figures than standard barriers, so check the data
+- Usually a lower Rw than the heaviest solid barriers, so check the data
 
 ## What to ask for
 
@@ -82,6 +82,6 @@ The other limits are the same as for any barrier:
 
 *This site is supported by Hushtec, a New Zealand manufacturer of temporary acoustic barriers with a UK manufacturing site in Wakefield, West Yorkshire, where its Performance and Premium panels are made.*
 
-Hushtec's transparent barrier is the **Vision Series**, a fully see-through panel made in **2.5 mm and 5 mm** thicknesses for indoor and outdoor use, with Velcro joins so it connects to Hushtec's solid panels. The clear panel in Hushtec's Clearplay system, **5 mm thick and 5 kg/m²**, is rated **STC 29**. **STC (Sound Transmission Class) is the American single-number rating for sound insulation**; it does a similar job to Rw but is calculated differently, so the two numbers aren't directly interchangeable. Hushtec's headline figure for the Vision Series is "up to 42 dB" sound attenuation; as with any "up to" figure, the reduction you get on site will be lower and depends on layout.
+Hushtec's transparent barrier is the **Vision Series**, a fully see-through panel made in **2.5 mm and 5 mm** thicknesses for indoor and outdoor use, with Velcro joins so it connects to Hushtec's solid panels. The 5 mm clear panel (5 kg/m²) is rated **Rw 29 dB**, close to Hushtec's solid Premium barrier (Rw 32 dB). Hushtec's headline figure for the Vision Series is "up to 42 dB" sound attenuation; as with any "up to" figure, the reduction you get on site will be lower and depends on layout.
 
 Hushtec also builds Vision 5 panels into its pile and vibro hammer shrouds as viewing windows, and into the roofs of its acoustic tents, combining clear sections with absorbent Premium panels. To check whether a clear barrier suits your site, [ask through the Get Help form](/GetAssistance?who=contractor).
