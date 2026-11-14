@@ -88,4 +88,4 @@ That's a 15 dB reduction. As a guide, 10 dB sounds roughly half as loud. Results
 
 *This site is supported by Hushtec, a New Zealand manufacturer of temporary acoustic barriers with a UK manufacturing site in Wakefield, West Yorkshire, where its Performance and Premium panels are made.*
 
-Hushtec's breaker shrouds are made from its Premium acoustic material (Rw 32 dB). The 92.4 dB to 77.4 dB result above is from a Hushtec test. To check fit for a particular breaker, [describe your machine and site](/GetAssistance?who=contractor).
+Hushtec's Rock Breaker Shroud is an acoustic wrap that encloses the breaker, with a universal fit system for machines up to and over 50 tonnes. Hushtec says it installs in under five minutes. A clear acoustic viewing panel round the pick keeps the tool visible to the operator and also helps contain dust and flying chips. Hushtec rates it at up to 15 dB reduction, depending on the machine model and condition, which matches the 92.4 dB to 77.4 dB result above. To check fit for a particular breaker, [describe your machine and site](/GetAssistance?who=contractor).

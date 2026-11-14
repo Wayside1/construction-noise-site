@@ -17,7 +17,7 @@ faqs:
   - question: "What gives the biggest reduction in piling noise?"
     answer: "Of the common options, a freestanding enclosure around the active pile gives the largest local reduction, stated at 15 to 21 dB. The trade-off is time, as it takes a few hours to move between piles. Many sites combine a rig-mounted shroud, a perimeter wall and an enclosure for the piles closest to homes."
   - question: "Will a pile hammer shroud fit any rig?"
-    answer: "No. Rig-mounted shrouds are made for particular rigs and hammer configurations. Hushtec's rig-mounted shroud is for compatible Junttan piling rigs, and fit should be checked against the specific rig and hammer before ordering."
+    answer: "No. Rig-mounted shrouds are made for particular rigs and hammer configurations. Hushtec builds each Pile Drive Shroud to fit the specific hammer, rig or pile type, so give the rig and hammer details when asking about one."
 related:
   - { title: "How can piling noise be reduced? Perimeter barriers vs piling shrouds compared", href: "/articles/how-to-reduce-piling-noise-barriers-vs-shrouds" }
   - { title: "Why piling noise is getting louder in UK cities, and what residents can do", href: "/articles/piling-noise-uk-cities-what-residents-can-do" }
@@ -88,4 +88,6 @@ It's tempting to hang standard fence-style acoustic panels round a piling rig. I
 
 *This site is supported by Hushtec, a New Zealand manufacturer of temporary acoustic barriers with a UK manufacturing site in Wakefield, West Yorkshire, where its Performance and Premium panels are made.*
 
-Hushtec makes a **rig-mounted shroud for compatible Junttan piling rigs**, made from its Premium acoustic material, a **freestanding shroud** that encloses the active pile, and the **RapidWall** freestanding perimeter wall up to 8 m. The figures above come from Hushtec's 2026 piling noise data. To check what suits your rig and site, [describe your piling job](/GetAssistance?who=contractor).
+Hushtec's **Pile Drive Shroud** is custom-built to fit the specific hammer, rig or pile type, including compatible Junttan rigs. It combines Hushtec Premium acoustic barrier for sound absorption with a Vision 5 transparent panel, so the operator can still see the pile head, and it can be made to any height. Hushtec rates it at up to 15 dB reduction, depending on site conditions and equipment. For vibratory piling there is a matching **Vibro Hammer Shroud**, custom-built to encase the vibrating hammer, with cut-outs for the hydraulics.
+
+Hushtec also makes a **freestanding shroud** that encloses the active pile, and the **RapidWall** freestanding perimeter wall up to 8 m. The field figures above come from Hushtec's 2026 piling noise data. To check what suits your rig and site, [describe your piling job](/GetAssistance?who=contractor).
