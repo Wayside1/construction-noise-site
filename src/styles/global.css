@@ -192,3 +192,6 @@ table.data th { background: var(--paper-2); }
 .kpis .card { text-align: left; }
 .kpis .big { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; }
 .small { font-size: .85rem; color: var(--muted); }
+
+.home-hero-img { margin: 28px 0 8px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+.home-hero-img img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; max-height: 460px; object-fit: cover; }

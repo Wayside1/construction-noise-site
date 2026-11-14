@@ -7,12 +7,15 @@ import { IMAGES } from '../data/site';
 const latest = (await publishedArticles()).slice(0, 6);
 const lib = (await learningArticles()).slice(0, 4);
 ---
-<Base title="Construction Noise UK: Your Rights, the Rules & What Actually Works" description="The honest, independent guide to construction noise in the UK. Residents: what's allowed and how to complain effectively. Contractors: what actually reduces noise and the limits you work within.">
+<Base image={IMAGES.pilingSiteEnclosure.src} title="Construction Noise UK: Your Rights, the Rules & What Actually Works" description="The honest, independent guide to construction noise in the UK. Residents: what's allowed and how to complain effectively. Contractors: what actually reduces noise and the limits you work within.">
   <section class="hero">
     <div class="wrap">
       <div class="eyebrow">The honest, independent guide to construction noise</div>
       <h1>Construction noise, explained straight.</h1>
       <p class="lede">What sites are allowed to do, what they're not, and what actually makes a difference. Plain English, UK rules, real measured figures.</p>
+      <figure class="home-hero-img">
+        <img src={IMAGES.pilingSiteEnclosure.src} alt={IMAGES.pilingSiteEnclosure.alt} width="1600" height="900" fetchpriority="high" />
+      </figure>
       <div class="paths">
         <a class="path" href="/ComplaintGuide">
           <div class="who">I live near a site</div>

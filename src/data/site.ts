@@ -29,6 +29,11 @@ export const NAV = [
 // Real-world mitigation photos supplied by Caleb Shaw (Hushtec Ltd).
 // Stored in /public/images (moved off Base44, Nov 2026).
 export const IMAGES = {
+  pilingSiteEnclosure: {
+    src: '/images/piling-site-enclosure.webp',
+    alt: 'Illustration of three piling rigs fitted with acoustic shrouds, working inside a perimeter acoustic wall on a city site',
+    caption: 'Piling rigs with hammer shrouds working inside a perimeter acoustic wall.',
+  },
   barrierRoadside: {
     src: `/images/barrier-roadside.webp`,
     alt: 'Long run of temporary acoustic barrier panels installed along a roadside works site, with an operative checking a panel joint',
