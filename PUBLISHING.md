@@ -48,6 +48,7 @@ Body in Markdown. Use ## and ### headings, tables, lists.
 Rules:
 - Quote every string value with double quotes; escape any `"` inside as `\"`. Dates are unquoted `YYYY-MM-DD`.
 - Internal links are root-relative: `/articles/<slug>`, `/ComplaintGuide`, `/ContractorGuide`, `/MachineNoise`, `/NoiseCalculator`, `/LearningCentre`, `/FAQ`, `/GetAssistance`, `/contact`. There is NO `/NoiseLog` page (use `/articles/how-to-record-construction-noise-evidence` instead).
+- Any article that involves piling should link to the piling noise hub, `/piling-noise`. Noise-control option pages live at `/options/<slug>` (acoustic-barriers-up-to-2m, acoustic-barriers-up-to-8m, transparent-acoustic-barriers, rock-breaker-shrouds, pile-rig-shrouds); link to the relevant one when an article discusses that option.
 - Learning Centre explainers live at `/learning-centre/<slug>` (see `src/content/learning/`).
 
 ### Photos available (real Hushtec photos, never use stock or AI images)

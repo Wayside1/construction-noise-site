@@ -19,6 +19,7 @@ faqs:
   - question: "Will a pile hammer shroud fit any rig?"
     answer: "No. Rig-mounted shrouds are made for particular rigs and hammer configurations. Hushtec builds each Pile Drive Shroud to fit the specific hammer, rig or pile type, so give the rig and hammer details when asking about one."
 related:
+  - { title: "Piling noise hub: levels, rules and what reduces it", href: "/piling-noise" }
   - { title: "How can piling noise be reduced? Perimeter barriers vs piling shrouds compared", href: "/articles/how-to-reduce-piling-noise-barriers-vs-shrouds" }
   - { title: "Why piling noise is getting louder in UK cities, and what residents can do", href: "/articles/piling-noise-uk-cities-what-residents-can-do" }
   - { title: "Types of pile drivers: piling methods and their noise impact", href: "/learning-centre/types-of-pile-drivers-a-guide-to-piling-methods-and-their-noise-impact" }

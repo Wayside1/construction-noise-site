@@ -13,6 +13,7 @@ export const GET: APIRoute = async () => {
 ## Key guides
 
 - [How to complain about construction noise (UK)](${u}/ComplaintGuide): Step-by-step: evidence, permitted hours, talking to the site, Environmental Health, escalation.
+- [Piling noise hub](${u}/piling-noise): Typical dB levels by piling method, Section 61 and BS 5228, and measured results for hammer shrouds, enclosures and tall walls.
 - [Contractor guide](${u}/ContractorGuide): Section 60, Section 61, BS 5228, best practicable means, and measured results for barriers, shrouds and enclosures.
 - [How loud is construction machinery?](${u}/MachineNoise): Typical dB levels for breakers, piling rigs, generators and other plant, and how each is quietened.
 - [Construction noise FAQ](${u}/FAQ): Legal working hours, notices, consents and taking action yourself.

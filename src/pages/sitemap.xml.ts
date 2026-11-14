@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { publishedArticles, learningArticles, optionPages } from '../data/content';
 import { SITE } from '../data/site';
-const STATIC = ['/', '/ComplaintGuide', '/ContractorGuide', '/LearningCentre', '/options', '/news', '/MachineNoise', '/NoiseCalculator', '/FAQ', '/GetAssistance', '/about', '/contact'];
+const STATIC = ['/', '/ComplaintGuide', '/ContractorGuide', '/LearningCentre', '/options', '/piling-noise', '/news', '/MachineNoise', '/NoiseCalculator', '/FAQ', '/GetAssistance', '/about', '/contact'];
 export const GET: APIRoute = async () => {
   const arts = await publishedArticles();
   const lib = await learningArticles();
