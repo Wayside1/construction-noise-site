@@ -1,0 +1,22 @@
+---
+import { SITE } from '../data/site';
+---
+<script is:inline define:vars={{ endpoint: SITE.formEndpoint }}>
+  document.querySelectorAll('form[data-form]').forEach(function (f) {
+    f.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var msg = f.querySelector('.form-msg'), btn = f.querySelector('button[type=submit]');
+      msg.className = 'form-msg'; msg.textContent = '';
+      var data = Object.fromEntries(new FormData(f).entries());
+      data.form = f.dataset.form; data.page = location.href;
+      btn.disabled = true; var label = btn.textContent; btn.textContent = 'Sending…';
+      try {
+        var r = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        if (!r.ok) throw new Error('bad');
+        f.reset(); msg.className = 'form-msg ok'; msg.textContent = f.dataset.ok || 'Thank you, your message has been sent.';
+      } catch (err) {
+        msg.className = 'form-msg err'; msg.innerHTML = 'Sorry, that didn’t send. Please try again in a moment.';
+      } finally { btn.disabled = false; btn.textContent = label; }
+    });
+  });
+</script>

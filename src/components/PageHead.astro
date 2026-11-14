@@ -1,0 +1,13 @@
+---
+interface Props { eyebrow?: string; title: string; lede?: string; crumbs?: { label: string; href: string }[] }
+const { eyebrow, title, lede, crumbs } = Astro.props;
+---
+<div class="page-head">
+  <div class="wrap">
+    {crumbs && <div class="crumbs">{crumbs.map((c, i) => <>{i > 0 && ' / '}<a href={c.href}>{c.label}</a></>)}</div>}
+    {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+    <h1>{title}</h1>
+    {lede && <p class="lede">{lede}</p>}
+    <slot />
+  </div>
+</div>

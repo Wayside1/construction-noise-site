@@ -1,0 +1,86 @@
+---
+import Base from '../layouts/Base.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import Figure from '../components/Figure.astro';
+import { publishedArticles, learningArticles } from '../data/content';
+import { IMAGES } from '../data/site';
+const latest = (await publishedArticles()).slice(0, 6);
+const lib = (await learningArticles()).slice(0, 4);
+---
+<Base title="Construction Noise UK: Your Rights, the Rules & What Actually Works" description="The honest, independent guide to construction noise in the UK. Residents: what's allowed and how to complain effectively. Contractors: what actually reduces noise and the limits you work within.">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">The honest, independent guide to construction noise</div>
+      <h1>Construction noise, explained straight.</h1>
+      <p class="lede">What sites are allowed to do, what they're not, and what actually makes a difference. Plain English, UK rules, real measured figures.</p>
+      <div class="paths">
+        <a class="path" href="/ComplaintGuide">
+          <div class="who">I live near a site</div>
+          <h2>What's allowed, and how to complain so something happens</h2>
+          <ul>
+            <li>Permitted hours and the limits sites work to</li>
+            <li>Evidence your council will actually act on</li>
+            <li>Who to contact, in the right order</li>
+          </ul>
+        </a>
+        <a class="path" href="/ContractorGuide">
+          <div class="who">I run or plan a site</div>
+          <h2>What works, and the limits you must work within</h2>
+          <ul>
+            <li>Section 60, Section 61 and BS 5228 in plain English</li>
+            <li>Barriers, shrouds and enclosures: real dB results</li>
+            <li>Why wrapping a barrier round a pile rig does little</li>
+          </ul>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap block">
+    <div class="grid g4 kpis">
+      <div class="card"><div class="big">8am–6pm</div><p>Typical weekday hours for noisy work (8am–1pm Saturdays). Your council sets the actual hours.</p></div>
+      <div class="card"><div class="big">65–75 dB</div><p>BS 5228 daytime thresholds at a home's facade, depending on the area's usual background.</p></div>
+      <div class="card"><div class="big">10 dB</div><p>A 10 dB drop sounds roughly half as loud. Use it to judge any mitigation claim.</p></div>
+      <div class="card"><div class="big">Council</div><p>Environmental Health is the body with powers to act on construction noise.</p></div>
+    </div>
+    <p class="small" style="margin-top:10px">Rules vary by local authority. Check with your council for the limits on a specific site.</p>
+  </section>
+
+  <section class="wrap block">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
+      <h2 style="margin:0">Latest news &amp; guides</h2>
+      <a href="/news">All articles →</a>
+    </div>
+    <div class="grid g3" style="margin-top:20px">{latest.map((a) => <ArticleCard a={a} />)}</div>
+  </section>
+
+  <section class="wrap block">
+    <h2>What good noise control looks like</h2>
+    <p class="lede" style="font-size:1.05rem">Mitigation works best close to the noise: continuous barriers with no gaps, shrouds on the loudest plant, and enclosures around fixed work. Knowing what good looks like helps residents ask the right questions, and helps contractors pick measures that actually work.</p>
+    <div class="grid g3" style="margin-top:20px">
+      <Figure image={IMAGES.barrierRoadside} />
+      <Figure image={IMAGES.pileShroudLive} />
+      <Figure image={IMAGES.rockBreakerShroud} />
+    </div>
+  </section>
+
+  <section class="wrap block">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
+      <h2 style="margin:0">From the library</h2>
+      <a href="/LearningCentre">Browse the library →</a>
+    </div>
+    <div class="grid g2" style="margin-top:20px">
+      {lib.map((a) => (
+        <a class="card" href={`/learning-centre/${a.id}`}><span class="tag">{a.data.category}</span><h3 style="margin-top:10px">{a.data.title}</h3><p>{a.data.summary}</p></a>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap block">
+    <div class="grid g3">
+      <a class="card" href="/MachineNoise"><h3>How loud is that machine?</h3><p>Typical dB levels for breakers, piling rigs, generators and more, and what quietens them.</p><span class="more">See the table →</span></a>
+      <a class="card" href="/NoiseCalculator"><h3>Noise calculator</h3><p>Turn your phone reading and distance into an estimate of how loud the source is.</p><span class="more">Open the calculator →</span></a>
+      <a class="card" href="/GetAssistance"><h3>Not sure who to contact?</h3><p>Tell us about the site or roadworks and we'll point you to the people responsible.</p><span class="more">Get help →</span></a>
+    </div>
+  </section>
+</Base>

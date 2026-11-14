@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Figure from '../components/Figure.astro';
+import { IMAGES } from '../data/site';
+
+const steps = [
+  { title: 'Document the noise', body: 'Before filing a complaint, gather evidence. Councils act on patterns, not single events, so a consistent record is what gets a site visit.', tips: ['Record videos or audio with timestamps on your phone', 'Note the date, start and end time, and type of noise', 'Take photos of the site if visible from a public place', 'Keep a written log of every incident: see our <a href="/articles/how-to-record-construction-noise-evidence">evidence guide</a>'] },
+  { title: 'Check what the site is allowed to do', body: 'Under the Control of Pollution Act 1974 and the Environmental Protection Act 1990, councils have powers to control construction noise. Know the rules before complaining.', tips: ['Typical permitted hours: Mon–Fri 8am–6pm, Sat 8am–1pm', 'Sunday and Bank Holiday work is generally not permitted', 'Large sites may operate under a Section 61 consent with agreed hours and limits', 'Check if the site has a Construction Management Plan (CMP) through the planning portal'] },
+  { title: 'Talk to the site first', body: 'The quickest resolution is often speaking directly to the site manager. They may not realise they are causing a problem, and a documented approach shows the council you tried.', tips: ['Site contact details should be displayed on the hoarding', 'Ask for the work schedule and advance notice of especially loud work', 'Ask what mitigation is in place: shrouds, barriers, quieter methods', 'Be polite but firm, and write down what was said'] },
+  { title: 'Contact your council\'s Environmental Health team', body: 'If direct contact fails, Environmental Health is the body with legal powers to act on construction noise.', tips: ['Find your council at <a href="https://www.gov.uk/find-local-council" target="_blank" rel="noopener">gov.uk/find-local-council</a>', 'Send your log and evidence, not just a description', 'Ask for an assessment of whether it is a statutory nuisance, and a visit during the noisy activity', 'Ask for a case reference number to track progress'] },
+  { title: 'Escalate if needed', body: 'If the council does not respond adequately, there are further routes under UK law.', tips: ['Copy in your local councillor or MP', 'Apply to a magistrates\' court yourself under Section 82 of the Environmental Protection Act 1990 (give the person responsible at least three days\' written notice for noise)', 'Complain to the Local Government and Social Care Ombudsman if the council mishandled your complaint', 'Consider community mediation'] },
+];
+
+const contacts = [
+  { title: 'Local council: Environmental Health', priority: 'Start here', body: 'Your primary contact for construction noise complaints. Environmental Health Officers have statutory powers under the Environmental Protection Act 1990 and the Control of Pollution Act 1974.', links: [{ label: 'Find your council (GOV.UK)', href: 'https://www.gov.uk/find-local-council' }] },
+  { title: 'Planning authority', priority: 'Start here', body: 'If the site is breaching conditions of its planning consent, including noise conditions in a Construction Management Plan, or lacks permission.', links: [{ label: 'Find your local planning authority', href: 'https://www.gov.uk/find-local-council' }] },
+  { title: 'Health and Safety Executive (HSE)', priority: 'If relevant', body: 'For dangerous work practices on site. HSE deals with workers\' safety, not neighbours\' noise.', links: [{ label: 'Report to HSE', href: 'https://www.hse.gov.uk/contact/tell-us-about-a-health-and-safety-issue.htm' }], phone: '0300 003 1647' },
+  { title: 'Local Government and Social Care Ombudsman', priority: 'Last resort', body: 'If your council has not dealt with your complaint properly, the Ombudsman can investigate how it was handled.', links: [{ label: 'lgo.org.uk', href: 'https://www.lgo.org.uk' }], phone: '0300 061 0614' },
+];
+
+const rights = [
+  { t: 'Statutory noise nuisance', b: 'Under the Environmental Protection Act 1990 (sections 79–80), if a council is satisfied noise is a statutory nuisance, it must serve an abatement notice on the person responsible.' },
+  { t: 'Section 60 notice', b: 'Under the Control of Pollution Act 1974, councils can serve a Section 60 notice restricting construction hours, plant, methods and noise levels.' },
+  { t: 'Section 61 prior consent', b: 'Contractors can apply for a Section 61 consent in advance, agreeing hours, methods and noise controls with the council. Ask Environmental Health for a copy: it shows what the contractor promised.' },
+  { t: 'Your right to go to court', b: 'If the council fails to act, you can apply to a magistrates\' court yourself under Section 82 of the Environmental Protection Act 1990.' },
+];
+
+const howto = {
+  '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to complain about construction noise in the UK',
+  step: steps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })),
+};
+---
+<Base title="How to Complain About Construction Noise (UK Guide)" description="Step-by-step guide to complaining about construction noise in the UK: what sites are allowed to do, talking to the contractor, contacting Environmental Health and what happens next." jsonld={[howto]}>
+  <PageHead eyebrow="For residents" title="How to complain about construction noise, so something actually happens" lede="Construction during permitted hours is often legal, even when it's disruptive. But sites must keep noise as low as reasonably practicable, and councils have real powers. Here's how to use them." />
+
+  <div class="wrap block">
+    <div class="read">
+      <div class="note">
+        <strong>Before you complain.</strong> Under the Control of Pollution Act 1974 and the Environmental Protection Act 1990, councils can act on construction noise, but only where it goes beyond what is reasonable or breaks agreed limits. A complaint backed by a dated log and a clear request is far more likely to get a site visit than an angry email.
+      </div>
+
+      <h2>Step by step</h2>
+      <ol class="steps">
+        {steps.map((s) => (
+          <li>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+            <ul>{s.tips.map((t) => <li set:html={t} />)}</ul>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+
+  <section class="block" style="background:var(--paper-2);padding:48px 0;margin-top:40px">
+    <div class="wrap">
+      <h2 style="margin-top:0">Who to contact</h2>
+      <p>Start with the top two. Escalate only if needed.</p>
+      <div class="grid g2">
+        {contacts.map((c) => (
+          <div class="card">
+            <span class="tag">{c.priority}</span>
+            <h3 style="margin-top:10px">{c.title}</h3>
+            <p>{c.body}</p>
+            <p style="margin-top:10px">{c.links.map((l) => <a href={l.href} target="_blank" rel="noopener">{l.label} ↗</a>)}{c.phone && <span class="meta"> · {c.phone}</span>}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap block">
+    <h2 style="margin-top:0">Your rights under UK law</h2>
+    <div class="grid g2">
+      {rights.map((r) => <div class="card"><h3>{r.t}</h3><p>{r.b}</p></div>)}
+    </div>
+
+    <h2>What good mitigation looks like</h2>
+    <p>When you contact the site or the council, it helps to know what's reasonable to ask for. Continuous acoustic barriers with no gaps, and shrouds on the loudest plant, are both practical, widely used measures. A barrier only helps if it hides the machine from your window.</p>
+    <div class="grid g2">
+      <Figure image={IMAGES.barrierRoadside} />
+      <Figure image={IMAGES.pileShroudLive} />
+    </div>
+    <p style="margin-top:16px">Read more: <a href="/articles/can-noisy-construction-machines-be-made-quieter-what-to-ask-for">Can a noisy machine be made quieter, and what can you ask for?</a></p>
+
+    <div class="card" style="margin-top:32px;background:var(--ink);color:#fff;border:0">
+      <h3 style="color:#fff">Measure the noise with your phone</h3>
+      <p style="color:#d3dbe0">A free sound meter app such as Decibel X gives indicative dB(A) readings that support your log. Our <a style="color:#fff" href="/learning-centre/how-to-use-decibel-x-free-version-to-record-construction-noise">step-by-step Decibel X guide</a> covers the right settings.</p>
+    </div>
+
+    <div style="text-align:center;margin-top:48px">
+      <h2>Start building your evidence</h2>
+      <p>A dated log is the single most useful thing you can bring to Environmental Health.</p>
+      <a class="btn" href="/articles/how-to-record-construction-noise-evidence">How to record evidence</a>
+      &nbsp; <a class="btn ghost" href="/GetAssistance">Ask us for help</a>
+    </div>
+  </div>
+</Base>

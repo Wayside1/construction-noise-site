@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import FormScript from '../components/FormScript.astro';
+---
+<Base title="Get Help With Construction Noise | Who to Contact" description="Tell us about a noisy construction site, roadworks or a noise problem on your own site. Residents: we'll point you to the people responsible. Contractors: we'll suggest what's likely to work.">
+  <PageHead eyebrow="Get help" title="Tell us about the noise" lede="Residents: tell us where the works are and we'll research who is responsible and how to raise it. Contractors: describe your site challenge and we'll tell you what's likely to work." />
+  <div class="wrap block">
+    <div class="read">
+      <form class="form" data-form="get-assistance" data-ok="Thank you. We've received your request and will reply by email, usually within two working days.">
+        <div class="field">
+          <label>I am a…</label>
+          <div class="radio-cards">
+            <label><input type="radio" name="who" value="resident" checked /> <span>Resident<br /><span class="small">Affected by works near me</span></span></label>
+            <label><input type="radio" name="who" value="contractor" /> <span>Contractor<br /><span class="small">Planning or running a site</span></span></label>
+          </div>
+        </div>
+        <div class="grid g2" style="gap:0 16px">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" required autocomplete="name" /></div>
+          <div class="field"><label for="email">Your email</label><input id="email" name="email" type="email" required autocomplete="email" /></div>
+        </div>
+        <div class="field contractor-only" hidden><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization" /></div>
+        <div class="field">
+          <label for="location">Location of the works</label>
+          <p class="hint">Street and town, or road and junction, e.g. "A57 Mottram Road, Hyde".</p>
+          <input id="location" name="location" type="text" required />
+        </div>
+        <div class="field">
+          <label for="details" id="details-label">What's happening?</label>
+          <p class="hint" id="details-hint">What kind of noise, when it happens, how long it's been going on, and anyone you've already contacted.</p>
+          <textarea id="details" name="details" required></textarea>
+        </div>
+        <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+        <button class="btn" type="submit">Send</button>
+        <div class="form-msg" role="status"></div>
+        <p class="small" style="margin-top:14px">We use your details only to reply to this request. See <a href="/about">about this site</a>.</p>
+      </form>
+
+      <div class="grid g2" style="margin-top:28px">
+        <a class="card" href="/ComplaintGuide"><h3>Residents: start here</h3><p>The step-by-step complaint guide, who to contact and your rights.</p></a>
+        <a class="card" href="/ContractorGuide"><h3>Contractors: start here</h3><p>What actually reduces noise, and the limits you work within.</p></a>
+      </div>
+    </div>
+  </div>
+  <FormScript />
+  <script is:inline>
+    (function(){
+      var f = document.querySelector('form[data-form]');
+      function sync(){
+        var c = f.querySelector('input[name=who]:checked').value === 'contractor';
+        f.querySelectorAll('.contractor-only').forEach(function(e){ e.hidden = !c; });
+        document.getElementById('details-label').textContent = c ? 'Describe your site challenge' : "What's happening?";
+        document.getElementById('details-hint').textContent = c ? 'The noisy plant or activity (e.g. driven piling, breaker, generator), how close the nearest homes are, any limits you have to meet, and timescales.' : "What kind of noise, when it happens, how long it's been going on, and anyone you've already contacted.";
+      }
+      f.querySelectorAll('input[name=who]').forEach(function(r){ r.addEventListener('change', sync); });
+      if (new URLSearchParams(location.search).get('who') === 'contractor') { f.querySelector('input[value=contractor]').checked = true; }
+      sync();
+    })();
+  </script>
+</Base>

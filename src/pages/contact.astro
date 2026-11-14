@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import FormScript from '../components/FormScript.astro';
+---
+<Base title="Contact" description="Questions, article suggestions or corrections for the Construction Noise Guide.">
+  <PageHead eyebrow="Contact" title="Get in touch" lede="Questions, suggestions for articles, or something we've got wrong. If you need help with a specific noisy site, use Get Help instead." />
+  <div class="wrap block">
+    <div class="read">
+      <form class="form" data-form="contact" data-ok="Thank you, your message is in. We read every message and reply where a response is needed.">
+        <div class="grid g2" style="gap:0 16px">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" required autocomplete="name" /></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" required autocomplete="email" /></div>
+        </div>
+        <div class="field">
+          <label for="subject">What is this about?</label>
+          <select id="subject" name="subject">
+            <option>General question</option>
+            <option>Suggest an article</option>
+            <option>Report an error</option>
+            <option>Contractor enquiry</option>
+          </select>
+        </div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea></div>
+        <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+        <button class="btn" type="submit">Send message</button>
+        <div class="form-msg" role="status"></div>
+      </form>
+      <p style="margin-top:20px">Need help with a specific site? <a href="/GetAssistance">Use Get Help</a>.</p>
+    </div>
+  </div>
+  <FormScript />
+</Base>

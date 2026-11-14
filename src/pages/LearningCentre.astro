@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { learningArticles, publishedArticles } from '../data/content';
+const lib = await learningArticles();
+const guides = (await publishedArticles()).filter((a) => a.data.category === 'guides' || a.data.category === 'product-focus');
+const cats = Array.from(new Set(lib.map((a) => a.data.category)));
+---
+<Base title="Construction Noise Explained: dB, Rw, BS 5228 & More" description="The construction acoustics library: plain-English explanations of the law, BS 5228, decibels, Rw ratings, acoustic barriers and piling methods, for residents and contractors.">
+  <PageHead eyebrow="The library" title="Construction acoustics, explained" lede="Everything to do with construction noise in one place: what the law says, how noise is measured and rated, and what actually reduces it. Written for residents and contractors alike." />
+  <div class="wrap block">
+    <h2 style="margin-top:0">Explainers</h2>
+    <div class="chips" role="group" aria-label="Filter by topic">
+      <button aria-pressed="true" data-f="all">All</button>
+      {cats.map((c) => <button aria-pressed="false" data-f={c}>{c}</button>)}
+    </div>
+    <div class="grid g2" id="list">
+      {lib.map((a) => (
+        <a class="card" href={`/learning-centre/${a.id}`} data-cat={a.data.category}>
+          <div style="display:flex;justify-content:space-between;margin-bottom:10px"><span class="tag">{a.data.category}</span><span class="meta">{a.data.readTime}</span></div>
+          <h3>{a.data.title}</h3>
+          <p>{a.data.summary}</p>
+          <span class="more">Read →</span>
+        </a>
+      ))}
+    </div>
+    <h2>In-depth guides</h2>
+    <p class="lede" style="font-size:1rem">Longer pieces on barriers, ratings and noise control.</p>
+    <div class="grid g3">{guides.map((a) => <ArticleCard a={a} />)}</div>
+  </div>
+  <script is:inline>
+    document.querySelectorAll('.chips button').forEach(function(b){
+      b.addEventListener('click', function(){
+        document.querySelectorAll('.chips button').forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
+        var f = b.dataset.f;
+        document.querySelectorAll('#list .card').forEach(function(c){ c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none'; });
+      });
+    });
+  </script>
+</Base>

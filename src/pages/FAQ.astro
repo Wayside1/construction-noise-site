@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+
+const faqs = [
+  { cat: 'For residents', qs: [
+    ['What time can construction legally start in the UK?', 'There is no single national law setting exact hours, but most councils follow guidance of 8:00am–6:00pm Monday to Friday and 8:00am–1:00pm on Saturdays, with no noisy work on Sundays or Bank Holidays. Your council\'s Environmental Health team can confirm the hours for your area or a specific site.'],
+    ['What law protects me from construction noise?', 'The Environmental Protection Act 1990 (statutory nuisance) and the Control of Pollution Act 1974 (construction noise specifically). Under section 80 of the 1990 Act, if a council is satisfied noise amounts to a statutory nuisance, it must serve an abatement notice on the person responsible.'],
+    ['How do I report construction noise?', 'Contact your local council\'s Environmental Health team; find your council at gov.uk/find-local-council. Send a dated log of the noise and ask for an assessment and a visit during the noisy activity. Call 999 only if there is an immediate danger to life.'],
+    ['What is a Section 60 notice?', 'A notice served by a council under the Control of Pollution Act 1974. It can restrict working hours, the plant or machinery used, and noise levels on a construction site. Breaching it without reasonable excuse is a criminal offence.'],
+    ['Can I take legal action myself?', 'Yes. Under section 82 of the Environmental Protection Act 1990, you can apply to a magistrates\' court if you believe a statutory nuisance exists. For noise, you must first give the person responsible at least three days\' written notice. The court can make an order requiring the nuisance to stop.'],
+    ['What if my landlord won\'t help?', 'You don\'t need your landlord to complain to Environmental Health. Citizens Advice or a housing adviser can help if the noise affects your tenancy.'],
+    ['What is a Construction Management Plan (CMP)?', 'A plan often required by planning conditions on larger sites, setting out how the developer will manage noise, dust, traffic and other impacts. Ask the council\'s planning department whether one exists for a site and how to view it.'],
+    ['Can I complain about traffic on a roadworks diversion?', 'Not usually to Environmental Health: noise made by traffic is excluded from statutory nuisance. Take diversion routing to the highway authority running the closure. See our roadworks diversion guide.'],
+  ]},
+  { cat: 'For contractors', qs: [
+    ['What is BS 5228 and does it apply to me?', 'BS 5228-1:2009+A1:2014 is the code of practice for noise control on construction and open sites, approved under the Control of Pollution Act 1974. It is used in planning conditions, Section 61 consents and enforcement, and following it is the clearest way to show you are using best practicable means.'],
+    ['Should I apply for Section 61 prior consent?', 'If your works are likely to cause disturbance, it is strongly advisable. It lets you agree hours, methods and noise controls with the council in advance, and working within it is a defence against a Section 60 notice. It is not, by itself, a defence to a resident\'s section 82 proceedings.'],
+    ['What happens if we receive a Section 60 notice?', 'You must comply. Breaching it without reasonable excuse is an offence. You can appeal to a magistrates\' court within 21 days of service.'],
+    ['Am I responsible for noise caused by subcontractors?', 'As principal contractor you are generally responsible for activities on site. Make sure subcontracts require compliance with the site noise management plan.'],
+    ['Will wrapping acoustic barriers round a pile rig reduce piling noise?', 'Rarely by much. Loose fence-style panels leave the hammer, high on the leader, in view, with gaps everywhere. Use a purpose-made hammer shroud, an enclosure round the active pile, or a wall tall enough to hide the hammer.'],
+    ['Do I need to notify neighbours before starting work?', 'There is no universal legal requirement, but it is good practice and often required by planning conditions or the CMP. A simple letter with your programme and contact details prevents many complaints.'],
+  ]},
+  { cat: 'General', qs: [
+    ['Are emergency works exempt from noise rules?', 'Genuinely urgent work to prevent danger to life or serious damage is generally treated differently, but contractors should still use best practicable means to minimise noise.'],
+    ['How long does it take to resolve a noise complaint?', 'Simple cases where the council speaks to the contractor can be resolved in days. Formal enforcement can take weeks. A detailed log speeds things up.'],
+    ['Can Citizens Advice help?', 'Yes. Citizens Advice gives free, independent advice on noise nuisance and housing issues: citizensadvice.org.uk or 0800 144 8848.'],
+  ]},
+];
+
+const resources = [
+  ['Find your local council – GOV.UK', 'https://www.gov.uk/find-local-council', 'Report noise and find Environmental Health contacts'],
+  ['Environmental Protection Act 1990', 'https://www.legislation.gov.uk/ukpga/1990/43/contents', 'Statutory nuisance law'],
+  ['Control of Pollution Act 1974', 'https://www.legislation.gov.uk/ukpga/1974/40/contents', 'Construction noise powers for councils'],
+  ['Citizens Advice – Noise nuisance', 'https://www.citizensadvice.org.uk/housing/problems-where-you-live/noise-nuisance/', 'Free advice on your rights'],
+  ['Local Government and Social Care Ombudsman', 'https://www.lgo.org.uk', 'If your council mishandles your complaint'],
+  ['HSE – Noise at work', 'https://www.hse.gov.uk/noise/', 'Workplace noise rules for employers'],
+];
+
+const jsonld = [{
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faqs.flatMap((s) => s.qs).map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+}];
+---
+<Base title="Construction Noise FAQ | UK Rules, Hours & Your Rights" description="Answers to common questions about UK construction noise: legal working hours, Section 60 notices, Section 61 consent, statutory nuisance and taking action yourself." jsonld={jsonld}>
+  <PageHead eyebrow="FAQ" title="Construction noise: common questions" lede="UK construction noise law, complaints and mitigation, in short answers." />
+  <div class="wrap block">
+    <div class="read">
+      {faqs.map((s) => (
+        <section>
+          <h2>{s.cat}</h2>
+          {s.qs.map(([q, a]) => <details class="faq"><summary>{q}</summary><p>{a}</p></details>)}
+        </section>
+      ))}
+      <h2>UK resources and legislation</h2>
+      <div class="grid">
+        {resources.map(([t, u, d]) => <a class="card" href={u} target="_blank" rel="noopener"><h3 style="font-size:1rem">{t} ↗</h3><p>{d}</p></a>)}
+      </div>
+      <p class="small" style="margin-top:28px">General guidance based on UK law, not legal advice. For your situation, consult Citizens Advice, your council or a qualified solicitor.</p>
+    </div>
+  </div>
+</Base>

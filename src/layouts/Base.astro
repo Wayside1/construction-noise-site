@@ -1,0 +1,142 @@
+---
+import '../styles/global.css';
+import { SITE, NAV } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  ogType?: string;
+  image?: string | null;
+  jsonld?: object[];
+  noindex?: boolean;
+}
+const { title, description, ogType = 'website', image, jsonld = [], noindex = false } = Astro.props;
+const path = Astro.props.path ?? Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/');
+const canonical = new URL(path, SITE.url).toString().replace(/\/$/, path === '/' ? '/' : '');
+const fullTitle = title.includes('Construction Noise') || title.length > 52 ? title : `${title} | ${SITE.name}`;
+const current = path;
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.tagline,
+};
+---
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex" />}
+  <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonical} />
+  {image && <meta property="og:image" content={new URL(image, 'https://construction-noise.co.uk').href} />}
+  <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary" />
+  <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
+  {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+  <!-- Google Analytics 4, consent mode: denied until the visitor accepts -->
+  <script is:inline define:vars={{ ga: SITE.ga4 }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    var c = null; try { c = localStorage.getItem('cn-consent'); } catch (e) {}
+    gtag('consent', 'default', { analytics_storage: c === 'granted' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+    gtag('js', new Date());
+    gtag('config', ga);
+    var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga; document.head.appendChild(s);
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="/" class="brand" aria-label={`${SITE.name} home`}>
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 10v4M7 7v10M11 4v16M15 8v8M19 11v2"/></svg>
+        </span>
+        <span class="brand-name">Construction Noise<small>The independent guide</small></span>
+      </a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav" id="menu-btn">Menu</button>
+      <nav class="nav" id="nav" aria-label="Main">
+        {NAV.map((n) => (
+          <a href={n.href} class={n.cta ? 'cta' : undefined} aria-current={current === n.href ? 'page' : undefined}>{n.label}</a>
+        ))}
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <slot />
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h4>About this site</h4>
+          <p>{SITE.tagline}. Residents learn what's allowed and how to complain effectively; contractors learn what actually works.</p>
+          <p class="small" style="color:#a9b5bd">Supported by <a href={SITE.hushtecUrl} rel="noopener" target="_blank">Hushtec</a>, a New Zealand manufacturer of temporary acoustic barriers with a UK manufacturing site in Wakefield, West Yorkshire. <a href="/about">How the site is funded</a>.</p>
+        </div>
+        <div>
+          <h4>Residents</h4>
+          <ul>
+            <li><a href="/ComplaintGuide">How to complain</a></li>
+            <li><a href="/articles/how-to-record-construction-noise-evidence">Recording evidence</a></li>
+            <li><a href="/NoiseCalculator">Noise calculator</a></li>
+            <li><a href="/GetAssistance">Get help</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contractors</h4>
+          <ul>
+            <li><a href="/ContractorGuide">Contractor guide</a></li>
+            <li><a href="/MachineNoise">Machine noise levels</a></li>
+            <li><a href="/learning-centre/bs-5228-2009-what-contractors-need-to-know">BS 5228 explained</a></li>
+            <li><a href="/GetAssistance?who=contractor">Ask about your site</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="/LearningCentre">Library</a></li>
+            <li><a href="/news">News & Guides</a></li>
+            <li><a href="/FAQ">FAQ</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-small">
+        <p>This website provides general guidance only, not legal or engineering advice. For your situation, contact your council's Environmental Health team, Citizens Advice or a qualified professional.</p>
+        <p>© {new Date().getFullYear()} {SITE.name}. <button type="button" class="linkbtn" id="cookie-settings">Cookie settings</button></p>
+      </div>
+    </div>
+  </footer>
+  <div class="cookie" id="cookie" role="dialog" aria-label="Cookie consent">
+    <p>We use Google Analytics cookies to see which guides help people most. They are only set if you accept.</p>
+    <button class="btn" id="cookie-yes">Accept</button>
+    <button class="btn ghost" id="cookie-no">Decline</button>
+  </div>
+  <script is:inline>
+    (function(){
+      var b = document.getElementById('menu-btn'), n = document.getElementById('nav');
+      b.addEventListener('click', function(){ var o = n.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+      var box = document.getElementById('cookie');
+      function get(){ try { return localStorage.getItem('cn-consent'); } catch(e){ return null; } }
+      function set(v){ try { localStorage.setItem('cn-consent', v); } catch(e){} gtag('consent','update',{ analytics_storage: v }); box.classList.remove('show'); }
+      if (!get()) box.classList.add('show');
+      document.getElementById('cookie-yes').onclick = function(){ set('granted'); };
+      document.getElementById('cookie-no').onclick = function(){ set('denied'); };
+      document.getElementById('cookie-settings').onclick = function(){ box.classList.add('show'); };
+    })();
+  </script>
+</body>
+</html>

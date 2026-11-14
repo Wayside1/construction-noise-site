@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Figure from '../components/Figure.astro';
+import { IMAGES } from '../data/site';
+
+const machines = [
+  { n: 'Jackhammer / breaker', c: 'Demolition', db: '95–110 dB', notes: 'One of the loudest tools on site. A shroud fitted round the breaker is the most practical fix: in a Hushtec test a rock breaker measured 92.4 dB unshrouded and 77.4 dB shrouded.' },
+  { n: 'Pile driver (impact)', c: 'Foundations', db: '95–115 dB', notes: 'Extremely loud and low-frequency, and one of the most complained-about activities. CFA or rotary bored piling is significantly quieter. Where driven piling is used, a shroud round the hammer cuts around 7 dB, and a freestanding enclosure round the active pile 15–21 dB.' },
+  { n: 'Angle grinder', c: 'Cutting', db: '90–100 dB', notes: 'Very high, high-pitched noise. Best done inside a screened cutting station away from the boundary.' },
+  { n: 'Circular / table saw', c: 'Cutting', db: '85–100 dB', notes: 'Intermittent high peaks. Enclosing the saw bench or using a low-noise blade reduces it.' },
+  { n: 'Excavator / digger', c: 'Earthworks', db: '80–95 dB', notes: 'Modern excavators are quieter than older models, but tracking and bucket impacts still carry. Rubber pads and careful operation help.' },
+  { n: 'Compactor / wacker plate', c: 'Groundworks', db: '85–95 dB', notes: 'Noise plus vibration that neighbours can feel. Best kept to mid-day and away from older buildings.' },
+  { n: 'Nail gun (pneumatic)', c: 'Carpentry', db: '100–110 dB (peak)', notes: 'Intermittent impulse peaks well above 100 dB.' },
+  { n: 'Diesel generator', c: 'Power', db: '70–85 dB', notes: 'Continuous low-frequency drone, often running for long hours. An enclosure or a screen about 1.5 m taller than the set helps; battery or hybrid units can let it switch off at night.' },
+  { n: 'Concrete mixer (drum)', c: 'Concrete', db: '75–85 dB', notes: 'Moderate but persistent. Siting away from homes is the simplest control.' },
+  { n: 'Dumper truck', c: 'Transport', db: '75–90 dB', notes: 'Tonal reversing alarms add to the problem. Broadband ("white noise") alarms are recommended in residential areas.' },
+  { n: 'Pressure washer', c: 'Cleaning', db: '75–85 dB', notes: 'Duration matters: prolonged use near boundaries attracts complaints.' },
+  { n: 'Tower crane', c: 'Lifting', db: '60–75 dB', notes: 'Relatively quiet. Hoist motors and alarms are the main sources.' },
+];
+const cats = ['All', ...Array.from(new Set(machines.map((m) => m.c)))];
+---
+<Base title="How Loud Is Construction Machinery? Typical dB Levels" description="Typical noise levels from breakers, piling rigs, excavators, generators and other construction plant, and the practical measures that quieten each one.">
+  <PageHead eyebrow="Reference" title="How loud is construction machinery?" lede="Typical noise levels from common site equipment, and what actually quietens each machine." />
+
+  <div class="wrap block">
+    <div class="grid g3">
+      <div class="card"><h3>How to read this table</h3><p>Levels are typical sound pressure levels at about 10 m from the machine, unmitigated. Noise falls by roughly 6 dB each time the distance doubles in open ground.</p></div>
+      <div class="card"><h3>Daytime benchmark</h3><p>BS 5228-1 uses daytime thresholds of 65–75 dB LAeq at the facade of a home, depending on the area's usual background noise.</p></div>
+      <div class="card"><h3>Evenings and nights</h3><p>Thresholds are much lower outside daytime hours. Noisy night work normally needs prior agreement with the council.</p></div>
+    </div>
+
+    <div class="chips" role="group" aria-label="Filter by category" style="margin-top:32px">
+      {cats.map((c, i) => <button aria-pressed={i === 0 ? 'true' : 'false'} data-f={c}>{c}</button>)}
+    </div>
+    <div class="grid" id="list">
+      {machines.map((m) => (
+        <div class="card" data-cat={m.c}>
+          <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline">
+            <div><span class="tag">{m.c}</span><h3 style="margin-top:8px">{m.n}</h3></div>
+            <div style="font-family:var(--serif);font-size:1.5rem;font-weight:700">{m.db}</div>
+          </div>
+          <p>{m.notes}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2>How the loudest plant can be quietened</h2>
+    <p>Piling rigs and breakers top the table, but they don't have to run unscreened. Shrouds and enclosures at the source are among the most effective ways to bring levels down at the boundary.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Option for driven piling</th><th>Reduction</th><th>As piling moves</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Perimeter barrier (up to 8 m)</strong></td><td>Depends on height and position; Rw 32 dB, αw 1.0 panels</td><td>Stays at the site boundary</td></tr>
+          <tr><td><strong>Freestanding shroud</strong></td><td>15–21 dB</td><td>A few hours to move to the next pile</td></tr>
+          <tr><td><strong>Rig-mounted shroud</strong></td><td>7.2 dB lower at 5 m</td><td>Travels with the rig</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Field comparison: an unshrouded rig measured 100.0 dB at 5 m and 89.9 dB at 15 m; with a full shroud, 92.8 dB and 82.5 dB. Indicative results from separate trials (Woodhall Spa and Ramsey). Product data from Hushtec, which supports this site. <a href="/articles/how-to-reduce-piling-noise-barriers-vs-shrouds">Read the full comparison →</a></p>
+
+    <div class="grid g2" style="margin-top:24px">
+      <Figure image={IMAGES.pileShroudLive} />
+      <Figure image={IMAGES.rockBreakerShroud} />
+      <Figure image={IMAGES.rigInEnclosure} />
+      <Figure image={IMAGES.pileShroudYard} />
+    </div>
+
+    <p class="small" style="margin-top:28px">Noise levels are indicative only, based on typical UK site measurements and BS 5228 data. Actual levels depend on equipment age, maintenance, distance and site conditions. For formal assessments, consult an acoustic consultant.</p>
+  </div>
+  <script is:inline>
+    document.querySelectorAll('.chips button').forEach(function(b){
+      b.addEventListener('click', function(){
+        document.querySelectorAll('.chips button').forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
+        var f = b.dataset.f;
+        document.querySelectorAll('#list .card').forEach(function(c){ c.style.display = (f === 'All' || c.dataset.cat === f) ? '' : 'none'; });
+      });
+    });
+  </script>
+</Base>

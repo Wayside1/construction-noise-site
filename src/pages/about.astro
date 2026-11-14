@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { SITE } from '../data/site';
+const jsonld = [{
+  '@context': 'https://schema.org', '@type': 'AboutPage', name: 'About the Construction Noise Guide', url: `${SITE.url}/about`,
+  mainEntity: { '@type': 'Person', name: 'Caleb Shaw', jobTitle: 'Sales Manager', worksFor: { '@type': 'Organization', name: 'Hushtec Ltd', url: SITE.hushtecUrl } },
+}];
+---
+<Base title="About the Construction Noise Guide | Who We Are" description="Who writes the Construction Noise Guide, how articles are researched, and how the site is funded by Hushtec Ltd." jsonld={jsonld}>
+  <PageHead eyebrow="About" title="About this site" lede={`${SITE.tagline}: for the people living next to the works, and the people running them.`} />
+  <div class="wrap block">
+    <div class="read prose">
+      <h2 style="margin-top:0">What this site is</h2>
+      <p>construction-noise.co.uk is a free library on construction acoustics in the UK. Most residents only discover how construction noise is regulated after the drilling has started. Most contractors only discover what actually works after the complaints have started. This site tries to get both sides there sooner.</p>
+      <p><strong>Residents</strong> can find out what sites are and aren't allowed to do, and how to complain to the council in a way that gets a response. <strong>Contractors</strong> can find out which measures really reduce noise, what the law and BS 5228 expect, and which "solutions" don't do much at all.</p>
+
+      <h2>How articles are written</h2>
+      <p>We follow a simple rule: answer the questions people actually ask, honestly, including the awkward ones about cost, problems and comparisons. Articles are researched from primary sources: legislation, British Standards such as BS 5228, council guidance, published test reports and measured site results. Sources are listed at the end of each article so you can check our reasoning.</p>
+      <p>This site gives general guidance only. It is not legal or engineering advice, and it's no substitute for your council's Environmental Health team, Citizens Advice, a solicitor or an acoustic consultant who knows the facts of your case.</p>
+
+      <h2>How this site is funded</h2>
+      <div class="note note-teal">
+        <p style="margin:0">This site is supported by <a href={SITE.hushtecUrl} target="_blank" rel="noopener">Hushtec Ltd</a>, a New Zealand manufacturer of temporary acoustic barriers with a UK manufacturing site in Wakefield, West Yorkshire, where its Performance and Premium panels are made. That support keeps the site free.</p>
+      </div>
+      <p>You should be able to see where our interests lie. Articles that focus on products, including Hushtec's and its competitors', are published under <strong>Product Focus</strong>, and every article that mentions Hushtec carries a disclosure. When we compare products, we use the manufacturers' own published data and test reports, and we say where a figure isn't published. Guidance for residents is written to inform, not to sell: we'd rather you got the noise sorted than bought anything.</p>
+
+      <h2 id="author">About the author</h2>
+      <p><strong>Caleb Shaw</strong>, Sales Manager, Hushtec Ltd.</p>
+      <p>Caleb works with contractors, acoustic consultants and equipment-hire companies across the UK and Europe on reducing construction noise at source. That work sits close to the practical questions this site tries to answer: which machines generate the noise, how far it carries, what can be done about it, and what tends to satisfy a local authority when a complaint lands on their desk.</p>
+      <p>Spotted something wrong? <a href="/contact">Tell us</a> and we'll correct it.</p>
+    </div>
+  </div>
+</Base>

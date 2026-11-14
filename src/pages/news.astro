@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { publishedArticles } from '../data/content';
+import { CATEGORIES } from '../data/site';
+const list = await publishedArticles();
+---
+<Base title="Construction Noise News & Guides" description="Articles on construction noise in the UK: real cases and what residents can do, plain-English guides, and honest comparisons of noise control products.">
+  <PageHead eyebrow="News & Guides" title="News, guides and honest comparisons" lede="Real cases from around the UK and what could be done about them, plain-English guides to the rules, and straight comparisons of the kit contractors use." />
+  <div class="wrap block">
+    <div class="chips" role="group" aria-label="Filter by category">
+      <button aria-pressed="true" data-f="all">All</button>
+      {Object.entries(CATEGORIES).map(([k, v]) => <button aria-pressed="false" data-f={k}>{v}</button>)}
+    </div>
+    <div class="grid g3" id="list">{list.map((a) => <ArticleCard a={a} />)}</div>
+  </div>
+  <script is:inline>
+    document.querySelectorAll('.chips button').forEach(function(b){
+      b.addEventListener('click', function(){
+        document.querySelectorAll('.chips button').forEach(function(x){ x.setAttribute('aria-pressed', x === b); });
+        var f = b.dataset.f;
+        document.querySelectorAll('#list .card').forEach(function(c){ c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none'; });
+      });
+    });
+  </script>
+</Base>

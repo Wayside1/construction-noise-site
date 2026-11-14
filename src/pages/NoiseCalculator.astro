@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+---
+<Base title="Construction Noise Calculator: Distance & Barrier Effect" description="Estimate how loud construction noise is at another distance, compare it with typical machine levels, and see what a barrier that hides the plant could do.">
+  <PageHead eyebrow="Tool" title="Construction noise calculator" lede="Enter a reading you've taken and how far you were from the machine. The calculator estimates the level at 10 m (to compare with our machine table) and at your home, with and without screening." />
+  <div class="wrap block">
+    <div class="read">
+      <form class="form" id="calc" onsubmit="return false">
+        <div class="field">
+          <label for="lp">Your measured level, dB(A)</label>
+          <p class="hint">The average (LAeq) from your sound meter app.</p>
+          <input id="lp" type="number" inputmode="decimal" placeholder="e.g. 72" step="0.1" />
+        </div>
+        <div class="field">
+          <label for="r1">Distance from the machine when you measured (metres)</label>
+          <input id="r1" type="number" inputmode="decimal" placeholder="e.g. 20" step="0.1" min="0.5" />
+        </div>
+        <div class="field">
+          <label for="r2">Distance from the machine to your home (metres) <span class="small">optional</span></label>
+          <input id="r2" type="number" inputmode="decimal" placeholder="e.g. 40" step="0.1" min="0.5" />
+        </div>
+        <div class="field">
+          <label>Where did you measure?</label>
+          <div class="radio-cards">
+            <label><input type="radio" name="env" value="0" checked /> <span>Open space<br /><span class="small">Street, park, open ground</span></span></label>
+            <label><input type="radio" name="env" value="3" /> <span>Next to a wall or building<br /><span class="small">Reflections add about 3 dB</span></span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="bar">Screening between the machine and your home</label>
+          <select id="bar">
+            <option value="0">None, or I can clearly see the machine</option>
+            <option value="5">Barrier, but the top of the machine is just visible</option>
+            <option value="10">Barrier that completely hides the machine</option>
+          </select>
+        </div>
+        <button class="btn" id="go" type="button">Calculate</button>
+        <div id="out" class="card" style="margin-top:20px;display:none" aria-live="polite"></div>
+      </form>
+
+      <div class="note note-teal">
+        <strong>How it works.</strong> Sound from a single machine drops by about 6 dB each time the distance doubles (the inverse square law). Readings taken next to a reflective wall are about 3 dB higher than in open space, so we take that off. Screening figures follow the BS 5228 rule of thumb: about 5 dB if the plant is just visible over a barrier, about 10 dB if it's hidden. Results are estimates: a calibrated meter and a professional survey give defensible figures.
+      </div>
+      <p>Compare your 10 m figure with the <a href="/MachineNoise">typical machine levels</a>, or read <a href="/articles/how-to-record-construction-noise-evidence">how to record evidence</a> before contacting your council.</p>
+    </div>
+  </div>
+  <script is:inline>
+    (function(){
+      function v(id){ var x = parseFloat(document.getElementById(id).value); return isNaN(x) ? null : x; }
+      function band(db){
+        if (db >= 85) return 'Very loud: well above BS 5228 daytime thresholds at a home.';
+        if (db >= 75) return 'Above the highest BS 5228 daytime threshold (75 dB) at a home facade.';
+        if (db >= 65) return 'Within the BS 5228 daytime threshold range (65–75 dB), depending on your area\'s usual background.';
+        if (db >= 55) return 'Below BS 5228 daytime thresholds, but may still be a problem in the evening or at night.';
+        return 'Low for daytime construction noise.';
+      }
+      document.getElementById('go').addEventListener('click', function(){
+        var lp = v('lp'), r1 = v('r1'), r2 = v('r2');
+        var out = document.getElementById('out');
+        if (lp === null || !r1 || r1 <= 0) { out.style.display='block'; out.innerHTML = '<p>Please enter your reading and the distance you measured from.</p>'; return; }
+        var env = parseFloat(document.querySelector('input[name=env]:checked').value);
+        var bar = parseFloat(document.getElementById('bar').value);
+        var free = lp - env;
+        var at10 = free + 20 * Math.log10(r1 / 10);
+        var html = '<p class="small">Estimated level at 10 m from the machine</p><div style="font-family:var(--serif);font-size:2.4rem;font-weight:700">' + at10.toFixed(1) + ' dB</div>';
+        if (r2 && r2 > 0) {
+          var home = free + 20 * Math.log10(r1 / r2) - bar;
+          html += '<hr style="border:0;border-top:1px solid var(--line);margin:16px 0"><p class="small">Estimated level at your home (' + r2 + ' m' + (bar ? ', with screening' : '') + ')</p><div style="font-family:var(--serif);font-size:2rem;font-weight:700">' + home.toFixed(1) + ' dB</div><p>' + band(home) + '</p>';
+          if (!bar) html += '<p class="small">A barrier that completely hid the machine could bring this to about ' + (home - 10).toFixed(1) + ' dB.</p>';
+        }
+        out.innerHTML = html; out.style.display = 'block';
+      });
+    })();
+  </script>
+</Base>

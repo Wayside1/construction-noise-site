@@ -1,0 +1,16 @@
+---
+import { CATEGORIES } from '../data/site';
+interface Props { a: any }
+const { a } = Astro.props;
+const d = a.data;
+const date = d.published_date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+<a class="card" href={`/articles/${a.id}`} data-cat={d.category}>
+  <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:10px">
+    <span class:list={['tag', d.category]}>{CATEGORIES[d.category]}</span>
+    <span class="meta">{date}</span>
+  </div>
+  <h3>{d.title}</h3>
+  <p>{d.summary.length > 190 ? d.summary.slice(0, 185).replace(/\s+\S*$/, '') + '…' : d.summary}</p>
+  <span class="more">Read →</span>
+</a>

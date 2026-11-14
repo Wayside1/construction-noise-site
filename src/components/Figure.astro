@@ -1,0 +1,8 @@
+---
+interface Props { image: { src: string; alt: string; caption?: string }; contain?: boolean }
+const { image, contain = false } = Astro.props;
+---
+<figure class:list={['fig', { contain }]}>
+  <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
+  {image.caption && <figcaption>{image.caption}</figcaption>}
+</figure>

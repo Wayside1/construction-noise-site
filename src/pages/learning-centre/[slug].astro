@@ -1,0 +1,37 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { learningArticles } from '../../data/content';
+import { SITE } from '../../data/site';
+export async function getStaticPaths() {
+  const lib = await learningArticles();
+  return lib.map((a) => ({ params: { slug: a.id }, props: { a, lib } }));
+}
+const { a, lib } = Astro.props;
+const { Content } = await render(a);
+const related = lib.filter((r: any) => r.id !== a.id).sort((x: any, y: any) => Number(y.data.category === a.data.category) - Number(x.data.category === a.data.category)).slice(0, 3);
+const jsonld = [{
+  '@context': 'https://schema.org', '@type': 'Article', headline: a.data.title, description: a.data.summary,
+  author: { '@type': 'Person', name: 'Caleb Shaw', url: `${SITE.url}/about#author` },
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  mainEntityOfPage: `${SITE.url}/learning-centre/${a.id}`,
+}];
+---
+<Base title={a.data.title} description={a.data.summary} path={`/learning-centre/${a.id}`} ogType="article" jsonld={jsonld}>
+  <article class="wrap" style="padding-top:40px">
+    <div class="read">
+      <div class="crumbs"><a href="/">Home</a> / <a href="/LearningCentre">Library</a> / <span class="tag">{a.data.category}</span></div>
+      <h1>{a.data.title}</h1>
+      <div class="byline"><span>By <a href="/about#author">Caleb Shaw, Hushtec Ltd</a></span><span>{a.data.readTime}</span></div>
+      <div class="answer"><strong>In brief</strong>{a.data.summary}</div>
+      <div class="prose"><Content /></div>
+      <p class="disclosure">General guidance, not legal advice. {SITE.supportLine}</p>
+      <section>
+        <h2>More from the library</h2>
+        <div class="grid">
+          {related.map((r: any) => <a class="card" href={`/learning-centre/${r.id}`}><h3 style="font-size:1rem">{r.data.title}</h3></a>)}
+        </div>
+      </section>
+    </div>
+  </article>
+</Base>

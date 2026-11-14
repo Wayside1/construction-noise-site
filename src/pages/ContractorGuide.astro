@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Figure from '../components/Figure.astro';
+import { IMAGES } from '../data/site';
+
+const strategies = [
+  { t: 'Equipment selection', d: 'Choose lower-noise equipment where practicable', s: ['Use electric tools and plant instead of diesel or petrol where possible', 'Select machinery with the best available noise ratings', 'Maintain equipment regularly: worn parts cause excess noise', 'Use rubber-lined skips and chutes to reduce impact noise'] },
+  { t: 'Scheduling', d: 'Plan noisy activities to minimise community impact', s: ['Do the noisiest work mid-morning when fewer residents are home', 'Avoid starting before 8am on weekdays and Saturdays', 'No noisy work on Sundays or Bank Holidays without prior agreement', 'Apply for a Section 61 consent for unavoidable out-of-hours work'] },
+  { t: 'Screening', d: 'Use barriers where they break the line of sight', s: ['Screen as close to the noisy plant as the work allows', 'Make screens high enough to hide the plant from the highest affected window', 'No gaps at joints or at the base; extend past both ends of the noise', 'Turn the absorptive face towards the works'] },
+  { t: 'Community engagement', d: 'Keep neighbours informed and onside', s: ['Deliver a neighbour letter before work starts', 'Display the site manager\'s contact details on the hoarding', 'Give advance notice of particularly noisy phases', 'Respond to complaints promptly and log all actions'] },
+  { t: 'Operational good practice', d: 'Day-to-day habits that cut noise', s: ['Switch off plant when not in use: no idling', 'Lower materials rather than dropping them', 'Use broadband ("white noise") reversing alarms', 'Brief every operative and subcontractor on the noise plan'] },
+];
+
+const checklist = [
+  'Check the local authority\'s permitted hours before starting',
+  'Decide whether to apply for Section 61 prior consent',
+  'Confirm any Construction Management Plan noise conditions',
+  'Display the site manager\'s name and number on the hoarding',
+  'Predict noise at the nearest homes using BS 5228-1',
+  'Identify the two or three loudest machines and plan for each',
+  'Keep a complaints log and record every response',
+  'Review the noise management plan as the work changes',
+];
+---
+<Base title="Construction Noise Guide for Contractors | BS 5228 & S61" description="For contractors: the limits you work within (Section 60, Section 61, BS 5228, best practicable means) and what actually reduces construction noise, with measured results.">
+  <PageHead eyebrow="For contractors" title="What actually works, and the limits you work within" lede="Meet your legal duties, avoid enforcement action and keep neighbours onside. Most complaints come from two or three machines; control those properly and the rest of the job gets easier." />
+
+  <div class="wrap block">
+    <div class="card" style="background:var(--teal-bg);border:0">
+      <h3>The UK framework in one paragraph</h3>
+      <p>Under the <strong>Control of Pollution Act 1974</strong>, councils can serve a <strong>Section 60 notice</strong> setting your hours, plant and noise levels, and you can apply in advance for <strong>Section 61 prior consent</strong>. Under the <strong>Environmental Protection Act 1990</strong>, councils must investigate statutory nuisance complaints. Throughout, you're expected to use <strong>best practicable means (BPM)</strong>, and <strong>BS 5228-1:2009+A1:2014</strong> is the approved code of practice used to judge what that looks like.</p>
+    </div>
+
+    <h2>What actually reduces noise</h2>
+    <p>Mitigation works in layers: at the machine, around the work zone, and at the boundary. The closer to the source, the more it does.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Measure</th><th>Typical result</th><th>Where it works best</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Rig-mounted pile hammer shroud</strong></td><td>About 7 dB (100.0 → 92.8 dB at 5 m)</td><td>Driven piling with frequent rig moves</td></tr>
+          <tr><td><strong>Freestanding enclosure round the active pile</strong></td><td>15–21 dB</td><td>Piles nearest homes, night or sensitive work</td></tr>
+          <tr><td><strong>Breaker shroud</strong></td><td>92.4 → 77.4 dB in a Hushtec test</td><td>Demolition, utilities, rock breaking</td></tr>
+          <tr><td><strong>Generator enclosure / screen</strong></td><td>86 → 48 dB in a Japanese case study</td><td>Fixed plant running for long periods</td></tr>
+          <tr><td><strong>Perimeter barrier that hides the plant</strong></td><td>About 10 dB (about 5 dB if the plant is just visible)</td><td>Ground-level neighbours, low plant</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Figures are indicative field and case-study results using Hushtec products; results vary with plant, layout and conditions. BS 5228 barrier figures from its prediction method.</p>
+
+    <div class="note">
+      <strong>A common mistake: wrapping standard barrier panels round a pile rig.</strong> Fence-style panels hung loosely round a rig leave the hammer, which sits high on the leader, in full view, with gaps everywhere. The result is close to nothing. Piling needs a purpose-made shroud fitted to the hammer, a proper enclosure round the active pile, or a wall tall enough to hide the hammer. See <a href="/articles/how-to-reduce-piling-noise-barriers-vs-shrouds">perimeter barriers vs piling shrouds compared</a>.
+    </div>
+
+    <div class="grid g2" style="margin-top:24px">
+      <Figure image={IMAGES.pileShroudLive} />
+      <Figure image={IMAGES.enclosureRender} contain />
+    </div>
+
+    <h3 style="margin-top:32px">How high does a screen need to be?</h3>
+    <p>A working rule of thumb: about <strong>1.5 m higher than the top of the noise source</strong>, so a 2.5 m generator needs a 4 m wall. Upper-floor neighbours need taller screens, or screens closer to the plant. Above about 2 m, fence-mounted panels run out of height and a supported system is needed (for example Rapidwall, wind-load tested to 8 m). Read: <a href="/articles/how-high-acoustic-wall-generator-plant-noise">how high an acoustic wall needs to be</a> and <a href="/articles/demolition-noise-barrier-4m-acoustic-wall-upper-floor-flats">screening for upper-floor flats</a>.</p>
+
+    <h3>Not all "acoustic" barriers are equal</h3>
+    <p>Compare panels on their <strong>Rw</strong> (sound through the panel, ISO 717-1) and <strong>αw</strong> (absorption, ISO 11654), not "up to" figures. Published fence-barrier ratings range from Rw 15 to Rw 38 dB, and some panels absorb almost nothing, so they reflect noise like hoarding. See <a href="/articles/temporary-acoustic-barrier-suppliers-uk">five UK suppliers compared</a> and <a href="/articles/what-is-rw-rating-acoustic-barrier">what Rw means</a>.</p>
+  </div>
+
+  <div class="wrap block">
+    <h2 style="margin-top:0">Good-practice measures</h2>
+    <div class="grid g3">
+      {strategies.map((x) => (
+        <div class="card"><h3>{x.t}</h3><p>{x.d}</p><ul style="margin:10px 0 0;padding-left:1.1em;font-size:.93rem;color:var(--ink-2)">{x.s.map((s) => <li>{s}</li>)}</ul></div>
+      ))}
+    </div>
+  </div>
+
+  <section class="block" style="background:var(--paper-2);padding:48px 0;margin-top:48px">
+    <div class="wrap">
+      <h2 style="margin-top:0">Compliance checklist</h2>
+      <div class="grid g2">{checklist.map((c) => <label class="card" style="display:flex;gap:10px;align-items:flex-start;padding:14px"><input type="checkbox" style="margin-top:5px" /> <span>{c}</span></label>)}</div>
+    </div>
+  </section>
+
+  <div class="wrap block">
+    <h2 style="margin-top:0">Typical permitted hours (UK)</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Monday – Friday</h3><div class="big" style="font-family:var(--serif);font-size:1.5rem;font-weight:700">8:00am – 6:00pm</div></div>
+      <div class="card"><h3>Saturday</h3><div style="font-family:var(--serif);font-size:1.5rem;font-weight:700">8:00am – 1:00pm</div></div>
+      <div class="card"><h3>Sundays &amp; Bank Holidays</h3><div style="font-family:var(--serif);font-size:1.5rem;font-weight:700">No noisy work</div><p>Unless agreed in advance, e.g. by Section 61 consent</p></div>
+    </div>
+    <p class="small" style="margin-top:10px">Standard guidance only: always confirm with the local authority.</p>
+
+    <h2>Sample neighbour notification letter</h2>
+    <pre style="background:var(--paper-2);border-radius:10px;padding:20px;white-space:pre-wrap;font-size:.9rem">Dear Resident,
+
+We are writing to let you know that construction works will be carried out at:
+[SITE ADDRESS]
+
+Works are due to start on [START DATE] and are expected to continue until approximately [END DATE].
+
+Working hours will be:
+Monday to Friday: 8:00am – 6:00pm
+Saturday: 8:00am – 1:00pm
+No works on Sundays or Bank Holidays
+
+We will do everything practicable to minimise noise. Particularly noisy activities (e.g. [TYPE OF WORK]) are planned for [DATES/TIMES], and we will use [MITIGATION, e.g. shrouded breakers / acoustic screens] to reduce their impact.
+
+If you have any concerns, please contact our site manager:
+[SITE MANAGER NAME]
+[PHONE NUMBER]
+[EMAIL ADDRESS]
+
+Thank you for your patience.
+
+Yours faithfully,
+[COMPANY NAME]</pre>
+
+    <div class="card" style="margin-top:40px;background:var(--ink);color:#fff;border:0">
+      <h2 style="color:#fff;margin-top:0">Got a noise problem on site?</h2>
+      <p style="color:#d3dbe0">Tell us what you're working with (a pile rig near homes, a breaker on a tight city site, a generator running overnight) and we'll tell you what's likely to work, and who can supply or hire it.</p>
+      <a class="btn" style="background:#fff;color:var(--ink)" href="/GetAssistance?who=contractor">Describe your site challenge</a>
+    </div>
+  </div>
+</Base>

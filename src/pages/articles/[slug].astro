@@ -1,0 +1,120 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { publishedArticles } from '../../data/content';
+import { CATEGORIES, SITE } from '../../data/site';
+
+export async function getStaticPaths() {
+  const list = await publishedArticles();
+  return list.map((a) => ({ params: { slug: a.id }, props: { a, list } }));
+}
+const { a, list } = Astro.props;
+const d = a.data;
+const { Content } = await render(a);
+const fmt = (x: Date) => x.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const url = `${SITE.url}/articles/${a.id}`;
+const isCaleb = d.author.startsWith('Caleb Shaw');
+const mentionsHushtec = /hushtec/i.test(a.body ?? '') || d.category === 'product-focus';
+const related = list
+  .filter((r: any) => r.id !== a.id)
+  .sort((x: any, y: any) => Number(y.data.category === d.category) - Number(x.data.category === d.category))
+  .slice(0, 3);
+
+const jsonld: object[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: d.title,
+    description: d.meta_description || d.summary,
+    datePublished: d.published_date.toISOString().slice(0, 10),
+    dateModified: (d.updated_date || d.published_date).toISOString().slice(0, 10),
+    author: isCaleb
+      ? { '@type': 'Person', name: 'Caleb Shaw', jobTitle: 'Sales Manager', url: `${SITE.url}/about#author`, worksFor: { '@type': 'Organization', name: 'Hushtec Ltd', url: SITE.hushtecUrl } }
+      : { '@type': 'Organization', name: d.author },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    ...(d.hero_image_url ? { image: new URL(d.hero_image_url, SITE.url).href } : {}),
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    keywords: d.tags.join(', '),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
+      { '@type': 'ListItem', position: 2, name: 'News & Guides', item: SITE.url + '/news' },
+      { '@type': 'ListItem', position: 3, name: d.title, item: url },
+    ],
+  },
+];
+if (d.faqs.length) {
+  jsonld.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: d.faqs.map((f: any) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+  });
+}
+---
+<Base title={d.meta_title || d.title} description={d.meta_description || d.summary} path={`/articles/${a.id}`} ogType="article" image={d.hero_image_url} jsonld={jsonld}>
+  <article class="wrap" style="padding-top:40px">
+    <div class="read">
+      <div class="crumbs"><a href="/">Home</a> / <a href="/news">News &amp; Guides</a> / <span class:list={['tag', d.category]}>{CATEGORIES[d.category]}</span></div>
+      <h1>{d.title}</h1>
+      <div class="byline">
+        <span>By {isCaleb ? <a href="/about#author">Caleb Shaw, Hushtec Ltd</a> : d.author}</span>
+        <span>Published <time datetime={d.published_date.toISOString().slice(0, 10)}>{fmt(d.published_date)}</time></span>
+        {d.updated_date && d.updated_date.getTime() !== d.published_date.getTime() && (
+          <span>Updated <time datetime={d.updated_date.toISOString().slice(0, 10)}>{fmt(d.updated_date)}</time></span>
+        )}
+      </div>
+
+      <div class="answer"><strong>Short answer</strong>{d.summary}</div>
+
+      {d.hero_image_url && (
+        <div class="hero-img"><img src={d.hero_image_url} alt={d.hero_image_alt || ''} /></div>
+      )}
+
+      {d.key_takeaways.length > 0 && (
+        <div class="takeaways">
+          <h2>Key takeaways</h2>
+          <ul>{d.key_takeaways.map((k: string) => <li>{k}</li>)}</ul>
+        </div>
+      )}
+
+      <div class="prose"><Content /></div>
+
+      {d.faqs.length > 0 && (
+        <section>
+          <h2>Frequently asked questions</h2>
+          {d.faqs.map((f: any) => (
+            <details class="faq"><summary>{f.question}</summary><p>{f.answer}</p></details>
+          ))}
+        </section>
+      )}
+
+      {d.sources.length > 0 && (
+        <section>
+          <h2>Sources</h2>
+          <ol class="sources">
+            {d.sources.map((s: any) => (
+              <li>{s.url ? <a href={s.url} rel="noopener nofollow" target="_blank">{s.title}</a> : s.title}</li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      <div class="note note-teal" style="margin-top:36px">
+        <strong>Dealing with a noisy site right now?</strong> Follow the <a href="/ComplaintGuide">step-by-step complaint guide</a>, or <a href="/GetAssistance">tell us about it</a> and we'll point you to the right people.
+      </div>
+
+      {mentionsHushtec && <p class="disclosure">{SITE.supportLine} <a href="/about">How this site is funded</a>.</p>}
+    </div>
+
+    {related.length > 0 && (
+      <section class="block">
+        <h2>Related reading</h2>
+        <div class="grid g3">{related.map((r: any) => <ArticleCard a={r} />)}</div>
+      </section>
+    )}
+  </article>
+</Base>
