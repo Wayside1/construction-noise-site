@@ -6,6 +6,8 @@ updated_date: 2026-11-13
 meta_title: "Roadworks diversion noise at night: what can you do?"
 meta_description: "Diverted lorries shaking your home at night? Why Environmental Health often can't act on traffic noise, and who can: highway authority, councillors, MPs."
 summary: "Noise from traffic on a signed roadworks diversion is excluded from statutory nuisance law, so your council's Environmental Health team usually can't act on it. Take diversion routing to the highway authority running the closure, report potholes causing vibration to your highways team, and use Environmental Health for noise from the works site itself."
+hero_image_url: "https://www.hushtecsolutions.com/wp-content/uploads/2026/06/rail-construction-noise-barrier-installation.jpg-scaled.jpg"
+hero_image_alt: "Excavator and work crew beside a tall noise barrier under a viaduct"
 key_takeaways:
   - "The Environmental Protection Act 1990, section 79(6A), excludes noise made by traffic from statutory nuisance."
   - "Diversion routes and HGV signing are decided by the highway authority running the closure, not Environmental Health."

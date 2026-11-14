@@ -5,6 +5,8 @@ published_date: 2026-10-21
 meta_title: "How to Record Construction Noise Evidence for Your Council"
 meta_description: "A practical step-by-step method for logging construction noise so Environmental Health takes your complaint seriously, including what to record and when."
 summary: "Councils act on patterns, not single events. A log that records the date, time, duration, noise type and an indicative level for several weeks is usually enough for an Environmental Health Officer to investigate — and often enough to support a formal complaint."
+hero_image_url: "https://www.hushtecsolutions.com/wp-content/uploads/2026/02/performance-barrier2.jpg"
+hero_image_alt: "Temporary acoustic barriers along the boundary of a city construction site"
 key_takeaways:
   - "Record consistently over weeks, not once: officers look for frequency, duration and time of day."
   - "Log the start and end time of each episode, not just that noise was heard."

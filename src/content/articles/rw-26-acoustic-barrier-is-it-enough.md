@@ -6,6 +6,8 @@ updated_date: 2026-11-13
 meta_title: "Rw 26 dB Acoustic Barrier: Is It Enough?"
 meta_description: "What an Rw 26 dB acoustic barrier means, why on-site noise reduction is lower than the lab figure, and how to tell if a site barrier is good enough."
 summary: "An Rw 26 dB acoustic barrier is rated at 26 dB for sound passing through the panel in laboratory tests, but the reduction you hear on site is lower because noise also travels over the top, around the ends and through gaps. Rw 26 dB is usually fine for general screening and smaller plant, but heavy works such as piling or rock breaking next to homes generally need heavier barriers, shrouds or taller walls."
+hero_image_url: "https://www.hushtecsolutions.com/wp-content/uploads/2025/07/performance-1-1-scaled.jpg"
+hero_image_alt: "Hushtec Performance acoustic barrier panels"
 key_takeaways:
   - "Rw is a lab rating (ISO 10140 / ISO 717-1) for sound passing through a material; it is not the reduction you will hear at your home."
   - "On site, sound diffracts over the top and around the ends of a barrier, so height, gaps and distance from the source matter as much as the rating."

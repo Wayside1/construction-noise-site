@@ -6,6 +6,8 @@ published_date: 2026-11-16
 meta_title: "What Is Sound Absorption and How Is It Measured?"
 meta_description: "Sound absorption explained: the 0-1 coefficient, how it's tested to ISO 354, αw classes A-E, NRC, and why an absorbent barrier face matters on site."
 summary: "Sound absorption is how much sound a surface soaks up instead of reflecting back. It is given as a coefficient from 0 (everything reflected) to 1 (everything absorbed), measured in a reverberation room to ISO 354 and summed up as a single weighted value, αw, with classes A to E under ISO 11654. On construction sites an absorbent barrier face stops noise bouncing around the works and out over the top, but absorption alone doesn't stop sound passing through a barrier."
+hero_image_url: "https://www.hushtecsolutions.com/wp-content/uploads/2025/07/stc-24-scaled.jpg"
+hero_image_alt: "Acoustic barrier panels with an absorptive face"
 key_takeaways:
   - "Sound absorption is how much sound a surface soaks up rather than reflects; it's different from sound insulation (Rw), which is how much sound a barrier stops passing through."
   - "Absorption is a coefficient from 0 to 1, measured in a reverberation room to ISO 354 across frequency bands."

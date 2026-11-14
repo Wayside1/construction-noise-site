@@ -6,6 +6,8 @@ updated_date: 2026-11-13
 meta_title: "Top 5 Temporary Acoustic Barrier Suppliers UK"
 meta_description: "Echo Barrier, Siderise, BIGBEN, Hushtec and RVT Group compared: published Rw ratings, absorption, sizes and what to ask before you hire or buy."
 summary: "Five of the best-known names in UK temporary acoustic barriers are Echo Barrier, Siderise, BIGBEN Sound Blocker, Hushtec and RVT Group. Published ratings for their fence-mounted barriers range from Rw 15 to Rw 38 dB, but suppliers present them differently: some lead with single-frequency 'up to' figures, and BIGBEN retail listings give no acoustic data. Compare on Rw, absorption (αw), fire classification and fixing, not headline claims."
+hero_image_url: "https://www.hushtecsolutions.com/wp-content/uploads/2026/04/temporary-acoustic-barriers-768x429.jpg"
+hero_image_alt: "Temporary acoustic barrier panels fixed to site fencing next to a road"
 key_takeaways:
   - "The most useful comparison figure is Rw (sound reduction, ISO 717-1); the next is αw (absorption, ISO 11654). Ask every supplier for both, for the exact product on site."
   - "Fence-mounted barrier Rw figures we found: RVT SOUNDEX Quilt 15, Echo Barrier H9 16, Siderise NRB Superflex 22, Hushtec Performance 26, Premium 32, Signature Series 38."

@@ -8,6 +8,8 @@ order: 1
 
 The **Control of Pollution Act 1974 (COPA)** gives local authorities in the UK significant powers to control noise from construction sites. Here's what you need to know:
 
+![Temporary acoustic barriers around an active construction site](https://www.hushtecsolutions.com/wp-content/uploads/2025/10/temp-acoustic-barrier-1.jpg)
+
 ## What Does COPA Cover?
 
 COPA applies to noise from construction, demolition, and engineering works. It covers noise emitted from the site boundary and gives councils tools to act before and during noisy works.

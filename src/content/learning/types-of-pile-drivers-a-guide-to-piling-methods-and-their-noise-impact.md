@@ -8,6 +8,8 @@ order: 7
 
 **Piling** is one of the most significant sources of construction noise in urban areas. But the term covers a wide variety of techniques — and their noise profiles vary enormously. Understanding which type of piling is being used near you helps you assess whether the noise levels are reasonable, and strengthens any complaint you make.
 
+![Piling rig with an acoustic shroud on a live site](/images/pile-shroud-live.webp)
+
 ## Why Piling Type Matters for Noise Complaints
 
 Unmitigated piling noise can range from around **70 dB** for quiet rotary bored methods up to **105 dB or more** at source for driven piling. That 35 dB difference is enormous — on the logarithmic decibel scale, it represents a noise source roughly 3,000 times more acoustically powerful. Knowing what type of piling is being used is therefore the first step in assessing whether the noise is reasonable or excessive.

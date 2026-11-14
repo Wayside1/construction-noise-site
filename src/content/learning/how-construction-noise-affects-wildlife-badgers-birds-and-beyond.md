@@ -8,6 +8,8 @@ order: 8
 
 Construction sites generate some of the loudest and most persistent noise in our environment — and the impact on local wildlife can be profound. While human noise complaints focus on health and wellbeing, UK law also recognises that wildlife deserves protection from the disruption caused by construction activity.
 
+![Noise barrier running alongside woodland](https://www.hushtecsolutions.com/wp-content/uploads/2025/01/220copy1-scaled-1-768x432.jpg)
+
 ## Why Noise Matters to Wildlife
 
 Animals rely on sound for survival — to communicate, find mates, detect predators, and navigate. Persistent construction noise at levels above 60–70 dB can:

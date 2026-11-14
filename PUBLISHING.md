@@ -62,7 +62,32 @@ Rules:
 | `/images/enclosure-freestanding.webp` | Free-standing three-sided barrier enclosure (render) | Enclosures, generators, fixed plant, BESS, data centres |
 | `/images/rock-breaker-shroud.webp` | Rock breaker with acoustic shroud | Breakers, demolition |
 
+| `/images/rapidwall-bushland.webp` | Two-tier freestanding RapidWall with an angled return, on ballast blocks among trees | RapidWall, tall walls, sensitive or wooded sites |
+
 To embed one in the body: `![descriptive alt text](/images/<file>.webp)`.
+
+### Images from the Hushtec website (approved by Caleb, 14 Nov 2026)
+
+Caleb asked for images from hushtecsolutions.com to be used where pages need them. They are linked directly from the Hushtec site (full absolute URL in `hero_image_url` or in the Markdown). Prefer the local photos above when one fits; use these to avoid repeating the same photo. Avoid Hushtec images that show people's faces in close-up, and never put a Hushtec-branded image on an article about a competitor's product.
+
+Base: `https://www.hushtecsolutions.com/wp-content/uploads/`
+
+| Path (after the base) | Shows |
+|---|---|
+| `2026/02/performance-barrier2.jpg` | Blue barriers along a city construction site boundary |
+| `2026/04/temporary-acoustic-barriers-768x429.jpg` | Barriers fixed to site fencing next to a road |
+| `2025/10/temp-acoustic-barrier-1.jpg` | Grey/blue barriers around an active site with an excavator |
+| `2026/03/industrial-noise-control-768x431.jpg` | Dark barriers screening a building site from the street |
+| `2026/06/rail-construction-noise-barrier-installation.jpg-scaled.jpg` | Excavator and crew beside a tall noise wall under a viaduct (rail, roads, infrastructure) |
+| `2025/01/220copy1-scaled-1-768x432.jpg` | Noise wall alongside woodland (wildlife, rural sites) |
+| `2025/07/performance-1-1-scaled.jpg` | Performance barrier panels (product shot) |
+| `2025/07/premium-1-1-scaled.jpg` | Premium barrier panels (product shot) |
+| `2025/07/stc-24-scaled.jpg` | Barrier panels, absorptive face (product shot) |
+| `2025/07/signature-scaled.jpg` | Signature Series panels (product shot) |
+| `2025/07/rock-breaker-shroud1-scaled.jpg` | Rock breaker shroud (product shot) |
+| `2025/07/rock-breaker-shroud.jpg` | Rock breaker with shroud working in woodland |
+| `2025/07/vision2.5-scaled.jpg` | Clear acoustic barrier sheet (transparent barriers) |
+| `2026/08/rapid-wall-systems-scaled.jpg` | RapidWall (product page hero) |
 
 ## 4. Check it builds
 

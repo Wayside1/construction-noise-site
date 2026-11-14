@@ -6,6 +6,8 @@ card_text: "See-through noise screens for when people need to see in or out: sig
 meta_title: "Transparent Acoustic Barriers: When See-Through Screens Help"
 meta_description: "Transparent acoustic barriers explained: clear curtains vs rigid panels, where they make sense, their limits on absorption, and what to ask for."
 summary: "A transparent acoustic barrier is a clear, heavy sheet or panel that blocks sound while letting people see through it and light pass. It's the right choice where visibility matters: sightlines for plant operators and traffic, shop fronts, neighbours' daylight, or keeping an eye on a work area. Clear materials reflect sound rather than absorb it, so they're often combined with absorbent panels."
+hero_image_url: "https://www.hushtecsolutions.com/wp-content/uploads/2025/07/vision2.5-scaled.jpg"
+hero_image_alt: "Clear acoustic barrier sheet"
 faqs:
   - question: "Do transparent acoustic barriers work as well as solid ones?"
     answer: "They can block sound well if the material is heavy enough and the joints are sealed, so ask for a tested Rw. The difference is absorption: clear sheet and panels have hard, smooth faces that reflect sound rather than soak it up. Where reflected noise matters, transparent sections are often combined with absorbent panels."

@@ -8,6 +8,8 @@ order: 5
 
 **BS 5228:2009+A1:2014** is the British Standard Code of Practice for *Noise and Vibration Control on Construction and Open Sites*. It is the primary technical guidance that councils, contractors, and courts refer to when assessing construction noise.
 
+![Acoustic barriers screening a building site from the street](https://www.hushtecsolutions.com/wp-content/uploads/2026/03/industrial-noise-control-768x431.jpg)
+
 ## What is BS 5228?
 
 BS 5228 is split into two parts:

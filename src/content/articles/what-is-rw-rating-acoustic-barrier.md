@@ -6,6 +6,8 @@ updated_date: 2026-11-13
 meta_title: "What Is the Rw dB Rating? Acoustic Barriers Explained"
 meta_description: "Rw is the lab rating for how much sound a barrier stops passing through it. How it's measured, what the numbers mean and why site results are lower."
 summary: "Rw (weighted sound reduction index) is a single number in decibels that shows how well a material stops sound passing through it, measured in a laboratory to ISO 10140-2 and calculated to ISO 717-1. A higher Rw means less sound gets through the panel. It's the fairest way to compare acoustic barriers, but the reduction you hear on site will be lower because sound also travels over and around the barrier."
+hero_image_url: "https://www.hushtecsolutions.com/wp-content/uploads/2025/07/premium-1-1-scaled.jpg"
+hero_image_alt: "Hushtec Premium acoustic barrier panels"
 key_takeaways:
   - "Rw is a single-number lab rating, in dB, for sound passing through a material, measured to ISO 10140-2 and calculated to ISO 717-1."
   - "There is no official 'Rw class': Rw is a number. Lettered classes (A to E) exist for sound absorption under ISO 11654, not for Rw."
