@@ -91,4 +91,6 @@ It's tempting to hang standard fence-style acoustic panels round a piling rig. I
 
 Hushtec's **Pile Drive Shroud** is custom-built to fit the specific hammer, rig or pile type, including compatible Junttan rigs. It combines Hushtec Premium acoustic barrier for sound absorption with a Vision 5 transparent panel, so the operator can still see the pile head, and it can be made to any height. Hushtec rates it at up to 15 dB reduction, depending on site conditions and equipment. For vibratory piling there is a matching **Vibro Hammer Shroud**, custom-built to encase the vibrating hammer, with cut-outs for the hydraulics.
 
+Shrouds can also be built for much larger rigs: Hushtec supplied one designed around a large rig piling offshore in Auckland, New Zealand. See [marine and waterside works](/options/marine-acoustic-barriers) for how airborne and underwater piling noise are handled differently.
+
 Hushtec also makes a **freestanding shroud** that encloses the active pile, and the **RapidWall** freestanding perimeter wall up to 8 m. The field figures above come from Hushtec's 2026 piling noise data. To check what suits your rig and site, [describe your piling job](/GetAssistance?who=contractor).

@@ -2,7 +2,7 @@
 title: "Marine and waterside noise control"
 menu_label: "Marine and waterside works"
 order: 6
-card_text: "Ports, quays, bridges and sea defences: bubble curtains for underwater noise, and tall acoustic walls for airborne noise reaching birds on the foreshore and nearby homes."
+card_text: "Ports, quays, bridges and offshore piling: bubble curtains for underwater noise, and tall acoustic walls and rig shrouds for airborne noise reaching birds on the foreshore and nearby homes."
 meta_title: "Marine Acoustic Barriers & Bubble Curtains for Waterside Works"
 meta_description: "Marine construction makes two kinds of noise. Bubble curtains cut underwater piling noise; tall acoustic walls screen birds and homes from airborne noise."
 summary: "Construction on or next to water makes two different kinds of noise, and they need different fixes. Underwater noise from piling and dredging, which marine licences mostly regulate to protect fish and marine mammals, is reduced with bubble curtains and similar systems; an acoustic wall does nothing for it. Airborne noise reaching birds on the foreshore, seals and nearby homes is reduced with tall acoustic walls such as Hushtec's RapidWall, available up to 8 m high, and with shrouds on the noisiest plant."
@@ -18,6 +18,8 @@ faqs:
     answer: "Only for airborne noise. Many marine licence conditions on piling and dredging concern underwater noise and marine mammals, which a wall cannot touch. Where the concern is airborne noise disturbing nesting or feeding birds, a wall can help, but only if the regulator accepts it as mitigation, so propose it before work starts."
   - question: "Can a temporary acoustic wall go on a bridge?"
     answer: "It can be considered. Hushtec has proposed a 6 m RapidWall along a bridge parapet to screen works from estuary mudflats. Any wall on a bridge deck needs a site-specific check of wind loading, deck loading and fixing, and the regulator must agree it as mitigation before it can be relied on."
+  - question: "Can you put an acoustic shroud on a pile rig working over water?"
+    answer: "Yes. A shroud built around the rig's hammer reduces airborne piling noise wherever the rig is working, including on barges and jetties where a tall wall is impractical. Hushtec supplied one for a large rig piling offshore in Auckland. A shroud does not reduce the noise travelling through the water from the pile, which needs underwater controls such as a bubble curtain."
   - question: "Does a wall stop birds being disturbed?"
     answer: "It can reduce disturbance, because birds react to the sight and movement of people and plant as well as to noise, and a solid wall blocks both. It does not lift a seasonal restriction on its own. Natural England or the Marine Management Organisation has to accept it as mitigation."
 related:
@@ -60,6 +62,8 @@ Above the waterline, waterside works behave much like any other site, with two c
 
 **A real example.** A contractor building a bridge over mudflats on the Humber, which is protected as a Special Protection Area, Special Area of Conservation, Ramsar site and SSSI, had to stop work because of birds using the mudflats. Hushtec proposed a **6 m RapidWall along the bridge parapet** to screen the works from the mudflats. In the end the contractor chose to pause construction until the nesting season was over. That is often the lowest-risk route with the regulator, but it costs time.
 
+**Treating the rig itself.** On waterside and offshore piling, the hammer is often the loudest airborne source, and a wall on a barge or jetty can't get high enough to hide it. In Auckland, New Zealand, Hushtec supplied an acoustic shroud for a large piling rig installing piles offshore. The shroud was designed around the rig, on the same principle as the rig-mounted shrouds used on smaller land rigs, but at a much larger scale. Like any shroud, it deals with the noise in the air: piling into the bed still sends noise through the water, which needs its own controls.
+
 The lessons for anyone planning similar work:
 
 - **Height and position matter most.** Birds on open mudflats see straight across the site, so the wall has to block the line of sight from the work to the birds. As a first estimate, Hushtec's working rule is that an acoustic screen should be about 1.5 m higher than the top of the noise source. It is not a substitute for a noise or ecology assessment. See [how high an acoustic wall needs to be](/articles/how-high-acoustic-wall-generator-plant-noise).
@@ -88,7 +92,7 @@ The lessons for anyone planning similar work:
 
 Hushtec lists **marine bubble curtains** among its products, available as supply only or supply and install, for underwater noise from piling and dredging. It does not publish performance figures for them, so ask for a site-specific prediction.
 
-For airborne noise, Hushtec's **RapidWall** is a modular freestanding acoustic wall available up to 8 m high, with standard heights of 2 m, 4 m, 6 m and 8 m and other heights on request. It needs no ground anchors, footings or excavation, is wind certified to 31 m/s, has a sound insulation rating of 32 dB, and can be laid out as a U-shape, L-shape, perimeter or corridor. Hushtec also makes custom shrouds and enclosures for noisy plant such as generators and pumps, and says its marine range is rated for salt, wind and UV. To talk through a waterside job, [describe your site](/GetAssistance?who=contractor).
+For airborne noise, Hushtec's **RapidWall** is a modular freestanding acoustic wall available up to 8 m high, with standard heights of 2 m, 4 m, 6 m and 8 m and other heights on request. It needs no ground anchors, footings or excavation, is wind certified to 31 m/s, has a sound insulation rating of 32 dB, and can be laid out as a U-shape, L-shape, perimeter or corridor. Hushtec also designs **pile rig shrouds** for marine piling, including a shroud built around a large rig piling offshore in Auckland, and makes custom shrouds and enclosures for noisy plant such as generators and pumps, and says its marine range is rated for salt, wind and UV. To talk through a waterside job, [describe your site](/GetAssistance?who=contractor).
 
 ### Sources
 
