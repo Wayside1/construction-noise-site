@@ -42,7 +42,7 @@ const jsonld: object[] = [
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
-      { '@type': 'ListItem', position: 2, name: 'News & Guides', item: SITE.url + '/news' },
+      { '@type': 'ListItem', position: 2, name: 'Learning Centre', item: SITE.url + '/LearningCentre' },
       { '@type': 'ListItem', position: 3, name: d.title, item: url },
     ],
   },
@@ -58,7 +58,7 @@ if (d.faqs.length) {
 <Base title={d.meta_title || d.title} description={d.meta_description || d.summary} path={`/articles/${a.id}`} ogType="article" image={d.hero_image_url} jsonld={jsonld}>
   <article class="wrap" style="padding-top:40px">
     <div class="read">
-      <div class="crumbs"><a href="/">Home</a> / <a href="/news">News &amp; Guides</a> / <span class:list={['tag', d.category]}>{CATEGORIES[d.category]}</span></div>
+      <div class="crumbs"><a href="/">Home</a> / <a href="/LearningCentre">Learning Centre</a> / <span class:list={['tag', d.category]}>{CATEGORIES[d.category]}</span></div>
       <h1>{d.title}</h1>
       <div class="byline">
         <span>By {isCaleb ? <a href="/about#author">Caleb Shaw, Hushtec Ltd</a> : d.author}</span>

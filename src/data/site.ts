@@ -26,10 +26,7 @@ export const OPTIONS_MENU = [
 
 export const NAV: { label: string; href: string; cta?: boolean; allLabel?: string; menu?: { label: string; href: string }[] }[] = [
   { label: 'Noise control options', href: '/options', menu: OPTIONS_MENU, allLabel: 'All options →' },
-  { label: 'Learning Centre', href: '/LearningCentre', menu: [
-    { label: 'Learning Centre explainers', href: '/LearningCentre' },
-    { label: 'News & Guides', href: '/news' },
-  ] },
+  { label: 'Learning Centre', href: '/LearningCentre' },
   { label: 'Get Help', href: '/GetAssistance', cta: true },
 ];
 
