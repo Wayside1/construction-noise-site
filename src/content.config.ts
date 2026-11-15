@@ -37,7 +37,7 @@ const learning = defineCollection({
   }),
 });
 
-// Explore the options: one page per noise-control option, /options/<slug>
+// Noise control options: one page per noise-control option, /options/<slug>
 const options = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/options' }),
   schema: z.object({

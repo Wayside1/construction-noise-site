@@ -196,7 +196,7 @@ table.data th { background: var(--paper-2); }
 .home-hero-img { margin: 28px 0 8px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
 .home-hero-img img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; max-height: 460px; object-fit: cover; }
 
-/* Explore the options dropdown */
+/* Top menu dropdowns */
 .dd { position: relative; }
 .dd-btn { background: none; border: 0; font: inherit; color: var(--ink-2); font-size: .93rem; font-weight: 500; padding: 8px 11px; border-radius: 7px; cursor: pointer; }
 .dd-btn:hover, .dd.open .dd-btn { background: var(--paper-2); color: var(--ink); }
@@ -209,6 +209,6 @@ table.data th { background: var(--paper-2); }
 @media (max-width: 860px) {
   .dd-btn { display: none; }
   .dd-menu { display: block; position: static; box-shadow: none; border: 0; padding: 0 0 6px; min-width: 0; }
-  .dd-menu::before { content: 'Explore the options'; display: block; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 8px 11px 4px; }
+  .dd-menu::before { content: attr(data-label); display: block; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 8px 11px 4px; }
   .nav .dd-menu a { white-space: normal; }
 }

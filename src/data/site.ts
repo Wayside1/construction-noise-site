@@ -24,11 +24,12 @@ export const OPTIONS_MENU = [
   { label: 'Pile rig shrouds', href: '/options/pile-rig-shrouds' },
 ];
 
-export const NAV: { label: string; href: string; cta?: boolean; menu?: { label: string; href: string }[] }[] = [
-  { label: 'Explore the options', href: '/options', menu: OPTIONS_MENU },
-  { label: 'Learning Centre', href: '/LearningCentre' },
-  { label: 'News & Guides', href: '/news' },
-  { label: 'FAQ', href: '/FAQ' },
+export const NAV: { label: string; href: string; cta?: boolean; allLabel?: string; menu?: { label: string; href: string }[] }[] = [
+  { label: 'Noise control options', href: '/options', menu: OPTIONS_MENU, allLabel: 'All options →' },
+  { label: 'Learning Centre', href: '/LearningCentre', menu: [
+    { label: 'Learning Centre explainers', href: '/LearningCentre' },
+    { label: 'News & Guides', href: '/news' },
+  ] },
   { label: 'Get Help', href: '/GetAssistance', cta: true },
 ];
 
