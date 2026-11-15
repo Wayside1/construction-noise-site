@@ -22,6 +22,7 @@ export const OPTIONS_MENU = [
   { label: 'Transparent acoustic barriers', href: '/options/transparent-acoustic-barriers' },
   { label: 'Rock breaker shrouds', href: '/options/rock-breaker-shrouds' },
   { label: 'Pile rig shrouds', href: '/options/pile-rig-shrouds' },
+  { label: 'Marine and waterside works', href: '/options/marine-acoustic-barriers' },
 ];
 
 export const NAV: { label: string; href: string; cta?: boolean; allLabel?: string; menu?: { label: string; href: string }[] }[] = [
