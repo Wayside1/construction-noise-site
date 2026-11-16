@@ -1,7 +1,7 @@
 ---
 title: "What is sound absorption and how is it measured?"
 category: guides
-status: draft
+status: published
 published_date: 2026-11-16
 meta_title: "What Is Sound Absorption and How Is It Measured?"
 meta_description: "Sound absorption explained: the 0-1 coefficient, how it's tested to ISO 354, αw classes A-E, NRC, and why an absorbent barrier face matters on site."
