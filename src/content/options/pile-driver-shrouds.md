@@ -51,6 +51,12 @@ There are three main ways to tackle it, and they're often used together.
 
 About 7 dB is a clearly noticeable improvement, and because the shroud stays on the hammer it keeps working as the rig moves round the site.
 
+### Watch: a shrouded Junttan PM16 pile driver
+
+This short video from Hushtec shows a Junttan PM16 pile driver working with an acoustic shroud fitted round the hammer. With the shroud on, the noise measured below 85 dB at 15 m. As with the figures above, the result depends on the rig, pile, ground and measurement conditions.
+
+<div style="max-width:340px;margin:20px auto"><div style="position:relative;padding-top:177.78%"><iframe src="https://www.youtube-nocookie.com/embed/ZQmz4N2M-Lg" title="Junttan PM16 pile driver with an acoustic shroud, under 85 dB at 15 m" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:8px" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+
 ## The common mistake: wrapping barrier panels round the pile driver
 
 It's tempting to hang standard fence-style acoustic panels round a piling rig. It does very little. The hammer is still high and exposed, the panels leave gaps everywhere, and they aren't designed for the movement and loads around a working rig. Piling needs a **shroud made for the hammer**, an **enclosure round the active pile**, or a **wall tall enough to hide the hammer**.
