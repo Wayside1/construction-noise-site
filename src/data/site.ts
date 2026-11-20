@@ -21,7 +21,7 @@ export const OPTIONS_MENU = [
   { label: 'Acoustic barriers up to 8 metres high', href: '/options/acoustic-barriers-up-to-8m' },
   { label: 'Transparent acoustic barriers', href: '/options/transparent-acoustic-barriers' },
   { label: 'Rock breaker shrouds', href: '/options/rock-breaker-shrouds' },
-  { label: 'Pile rig shrouds', href: '/options/pile-rig-shrouds' },
+  { label: 'Pile driver shrouds', href: '/options/pile-driver-shrouds' },
   { label: 'Marine and waterside works', href: '/options/marine-acoustic-barriers' },
 ];
 
@@ -52,7 +52,7 @@ export const IMAGES = {
   pileShroudYard: {
     src: `/images/pile-shroud-yard.webp`,
     alt: 'Acoustic shroud fitted around the hammer of a piling rig, viewed in a plant yard',
-    caption: 'Pile rig shroud fitted and ready for site.',
+    caption: 'Pile driver shroud fitted and ready for site.',
   },
   rigInEnclosure: {
     src: `/images/rig-in-enclosure.webp`,

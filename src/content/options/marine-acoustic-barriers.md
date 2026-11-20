@@ -18,13 +18,13 @@ faqs:
     answer: "Only for airborne noise. Many marine licence conditions on piling and dredging concern underwater noise and marine mammals, which a wall cannot touch. Where the concern is airborne noise disturbing nesting or feeding birds, a wall can help, but only if the regulator accepts it as mitigation, so propose it before work starts."
   - question: "Can a temporary acoustic wall go on a bridge?"
     answer: "It can be considered. Hushtec has proposed a 6 m RapidWall along a bridge parapet to screen works from estuary mudflats. Any wall on a bridge deck needs a site-specific check of wind loading, deck loading and fixing, and the regulator must agree it as mitigation before it can be relied on."
-  - question: "Can you put an acoustic shroud on a pile rig working over water?"
+  - question: "Can you put an acoustic shroud on a pile driver working over water?"
     answer: "Yes. A shroud built around the rig's hammer reduces airborne piling noise wherever the rig is working, including on barges and jetties where a tall wall is impractical. Hushtec supplied one for a large rig piling offshore in Auckland. A shroud does not reduce the noise travelling through the water from the pile, which needs underwater controls such as a bubble curtain."
   - question: "Does a wall stop birds being disturbed?"
     answer: "It can reduce disturbance, because birds react to the sight and movement of people and plant as well as to noise, and a solid wall blocks both. It does not lift a seasonal restriction on its own. Natural England or the Marine Management Organisation has to accept it as mitigation."
 related:
   - { title: "Acoustic barriers up to 8 metres high", href: "/options/acoustic-barriers-up-to-8m" }
-  - { title: "Pile rig shrouds", href: "/options/pile-rig-shrouds" }
+  - { title: "Pile driver shrouds", href: "/options/pile-driver-shrouds" }
   - { title: "How high does an acoustic wall need to be to screen generator and plant noise?", href: "/articles/how-high-acoustic-wall-generator-plant-noise" }
   - { title: "How construction noise affects wildlife: badgers, birds and beyond", href: "/learning-centre/how-construction-noise-affects-wildlife-badgers-birds-and-beyond" }
 ---
@@ -92,7 +92,7 @@ The lessons for anyone planning similar work:
 
 Hushtec lists **marine bubble curtains** among its products, available as supply only or supply and install, for underwater noise from piling and dredging. It does not publish performance figures for them, so ask for a site-specific prediction.
 
-For airborne noise, Hushtec's **RapidWall** is a modular freestanding acoustic wall available up to 8 m high, with standard heights of 2 m, 4 m, 6 m and 8 m and other heights on request. It needs no ground anchors, footings or excavation, is wind certified to 31 m/s, has a sound insulation rating of 32 dB, and can be laid out as a U-shape, L-shape, perimeter or corridor. Hushtec also designs **pile rig shrouds** for marine piling, including a shroud built around a large rig piling offshore in Auckland, and makes custom shrouds and enclosures for noisy plant such as generators and pumps, and says its marine range is rated for salt, wind and UV. To talk through a waterside job, [describe your site](/GetAssistance?who=contractor).
+For airborne noise, Hushtec's **RapidWall** is a modular freestanding acoustic wall available up to 8 m high, with standard heights of 2 m, 4 m, 6 m and 8 m and other heights on request. It needs no ground anchors, footings or excavation, is wind certified to 31 m/s, has a sound insulation rating of 32 dB, and can be laid out as a U-shape, L-shape, perimeter or corridor. Hushtec also designs **pile driver shrouds** for marine piling, including a shroud built around a large rig piling offshore in Auckland, and makes custom shrouds and enclosures for noisy plant such as generators and pumps, and says its marine range is rated for salt, wind and UV. To talk through a waterside job, [describe your site](/GetAssistance?who=contractor).
 
 ### Sources
 

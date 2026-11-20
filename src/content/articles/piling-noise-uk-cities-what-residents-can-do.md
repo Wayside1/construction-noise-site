@@ -3,7 +3,7 @@ title: "Why Piling Noise Is Getting Louder in UK Cities — and What Residents C
 category: news-and-solutions
 published_date: 2026-10-28
 updated_date: 2026-11-10
-meta_title: "Piling Noise in UK Cities: Causes and Resident Actions"
+meta_title: "Pile Driver Noise in UK Cities: What Residents Can Do"
 meta_description: "Driven piling is behind most severe construction noise complaints in UK cities. Here is why it is increasing, how loud it really is, and what you can do about it."
 hero_image_url: "/images/pile-shroud-live.webp"
 hero_image_alt: "Piling rig fitted with an acoustic shroud around the hammer, working on a live site"

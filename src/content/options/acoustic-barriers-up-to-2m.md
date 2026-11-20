@@ -66,7 +66,7 @@ A 10 dB drop sounds roughly half as loud. That's a real improvement, but it depe
 ## When a 2 m barrier isn't enough
 
 - **Upstairs windows and flats.** If the neighbours look down onto the works, a 2 m fence line doesn't block anything. You need a taller wall, or to deal with the noise at the machine.
-- **Tall plant.** Piling hammers, crushers and tall rigs sit well above 2 m. See [acoustic barriers up to 8 metres high](/options/acoustic-barriers-up-to-8m) and [pile rig shrouds](/options/pile-rig-shrouds).
+- **Tall plant.** Piling hammers, crushers and tall rigs sit well above 2 m. See [acoustic barriers up to 8 metres high](/options/acoustic-barriers-up-to-8m) and [pile driver shrouds](/options/pile-driver-shrouds).
 - **Impact noise right next to homes.** Breakers and hammers are often better tackled at source with a [rock breaker shroud](/options/rock-breaker-shrouds).
 - **Where people need to see through it.** For sightlines, light or safety, look at [transparent acoustic barriers](/options/transparent-acoustic-barriers).
 

@@ -5,7 +5,7 @@ import Figure from '../components/Figure.astro';
 import { IMAGES, SITE } from '../data/site';
 
 const faqs = [
-  { q: 'How loud is driven piling?', a: 'Driven precast concrete and steel piles typically produce 95–105 dB at 10 m without mitigation, about 20 dB more than rotary bored or CFA piling. In a field comparison, an unshrouded driven rig measured 100.0 dB at 5 m and 89.9 dB at 15 m. Levels at a home depend on distance, the rig, the hammer and anything screening the noise.' },
+  { q: 'How loud is a pile driver?', a: 'A pile driver hammering in precast concrete or steel piles typically produces 95–105 dB at 10 m without mitigation, about 20 dB more than rotary bored or CFA piling. In a field comparison, an unshrouded driven rig measured 100.0 dB at 5 m and 89.9 dB at 15 m. Levels at a home depend on distance, the rig, the hammer and anything screening the noise.' },
   { q: 'What is the most effective way to reduce piling noise?', a: 'Choose a quieter method where it is practicable, such as rotary bored or CFA instead of driven piles. Where driven piling is needed, treat the hammer at source with a shroud, use a freestanding enclosure for the piles nearest homes, and add a perimeter wall tall enough to hide the hammer where neighbours are close. Most sites combine two or three of these.' },
   { q: 'Do I need Section 61 consent for piling?', a: 'It is not compulsory, but it is strongly advisable where piling is likely to disturb neighbours. Section 61 of the Control of Pollution Act 1974 lets you agree methods, hours and noise controls with the council before work starts, and the council must decide within 28 days. Working within the consent is a defence against a Section 60 notice.' },
   { q: 'Will a fence-line acoustic barrier stop piling noise?', a: 'Rarely on its own. The hammer sits high on the leader, well above a 2 m fence line, so a standard barrier usually hides the rig\'s tracks but not the noise. Wrapping ordinary barrier panels round the rig does little either. Piling needs a shroud made for the hammer, an enclosure round the active pile, or a wall tall enough to hide the hammer.' },
@@ -16,14 +16,14 @@ const jsonld = [
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Piling noise', item: SITE.url + '/piling-noise' } ] },
+    { '@type': 'ListItem', position: 2, name: 'Pile driver noise', item: SITE.url + '/pile-driver-noise' } ] },
 ];
 ---
-<Base title="Piling Noise: Levels, Rules & What Actually Reduces It" description="The piling noise hub for operators and contractors: typical dB levels by method, Section 61 and BS 5228, and measured results for shrouds, enclosures and tall walls." path="/piling-noise" image={IMAGES.pileShroudLive.src} jsonld={jsonld}>
-  <PageHead eyebrow="Piling noise hub" title="Piling noise: levels, rules and what actually reduces it" lede="Everything for piling operators and contractors in one place: how loud each method is, the rules you work within, and measured results for the measures that work." crumbs={[{ label: 'Home', href: '/' }]} />
+<Base title="Pile Driver Noise: Levels, Rules & What Reduces It" description="Pile driver noise explained for contractors and neighbours: typical dB levels by piling method, Section 61 and BS 5228, and measured results for shrouds, enclosures and tall walls." path="/pile-driver-noise" image={IMAGES.pileShroudLive.src} jsonld={jsonld}>
+  <PageHead eyebrow="Pile driver noise hub" title="Pile driver noise: levels, rules and what actually reduces it" lede="Everything about pile driver and piling noise in one place for piling operators and contractors in one place: how loud each method is, the rules you work within, and measured results for the measures that work." crumbs={[{ label: 'Home', href: '/' }]} />
 
   <div class="wrap block">
-    <div class="answer"><strong>In brief</strong>Driven piling typically produces 95–105 dB at 10 m, about 20 dB more than rotary bored or CFA piling. Because the hammer sits high on the leader, a 2 m fence-line barrier rarely helps. What works is treating the noise at source with a hammer shroud (about 7 dB), enclosing the piles nearest homes (15–21 dB), and a tall perimeter wall where neighbours are close. Agree it all with the council in advance through Section 61.</div>
+    <div class="answer"><strong>In brief</strong>A pile driver typically produces 95–105 dB at 10 m, about 20 dB more than rotary bored or CFA piling. Because the hammer sits high on the leader, a 2 m fence-line barrier rarely helps. What works is treating the noise at source with a hammer shroud (about 7 dB), enclosing the piles nearest homes (15–21 dB), and a tall perimeter wall where neighbours are close. Agree it all with the council in advance through Section 61.</div>
 
     <h2>How loud is each piling method?</h2>
     <div class="table-scroll">
@@ -42,11 +42,11 @@ const jsonld = [
     <h2 style="margin-top:40px">What reduces piling noise?</h2>
     <p>Mitigation works in layers: at the hammer, around the pile being driven, and at the boundary. The closer to the source, the more it does.</p>
     <div class="grid g3" style="margin-top:20px">
-      <a class="card" href="/options/pile-rig-shrouds">
+      <a class="card" href="/options/pile-driver-shrouds">
         <span class="tag">At the hammer</span>
-        <h3 style="margin-top:10px">Pile rig shroud</h3>
+        <h3 style="margin-top:10px">Pile driver shroud</h3>
         <p>About 7 dB (100.0 → 92.8 dB at 5 m in field trials). Travels with the rig, so there's nothing to relocate.</p>
-        <span class="more">Pile rig shrouds →</span>
+        <span class="more">Pile driver shrouds →</span>
       </a>
       <a class="card" href="/articles/how-to-reduce-piling-noise-barriers-vs-shrouds">
         <span class="tag">Around the pile</span>
@@ -63,7 +63,7 @@ const jsonld = [
     </div>
 
     <div class="note">
-      <strong>Wrapping standard barrier panels round a pile rig does very little.</strong> The hammer stays high and exposed and the panels leave gaps everywhere. Use a shroud made for the hammer, an enclosure round the active pile, or a wall tall enough to hide the hammer.
+      <strong>Wrapping standard barrier panels round a pile driver does very little.</strong> The hammer stays high and exposed and the panels leave gaps everywhere. Use a shroud made for the hammer, an enclosure round the active pile, or a wall tall enough to hide the hammer.
     </div>
 
     <div class="grid g2" style="margin-top:24px">
@@ -99,10 +99,10 @@ const jsonld = [
 
     <h2 style="margin-top:40px">Piling guides on this site</h2>
     <div class="grid g2" style="margin-top:16px">
-      <a class="card" href="/options/pile-rig-shrouds"><h3 style="font-size:1rem">Pile rig shrouds</h3><p>Rig-mounted shrouds, freestanding enclosures and walls, with measured results.</p></a>
+      <a class="card" href="/options/pile-driver-shrouds"><h3 style="font-size:1rem">Pile driver shrouds</h3><p>Rig-mounted shrouds, freestanding enclosures and walls, with measured results.</p></a>
       <a class="card" href="/articles/how-to-reduce-piling-noise-barriers-vs-shrouds"><h3 style="font-size:1rem">How can piling noise be reduced? Perimeter barriers vs piling shrouds compared</h3><p>The three options side by side, with field data.</p></a>
       <a class="card" href="/learning-centre/types-of-pile-drivers-a-guide-to-piling-methods-and-their-noise-impact"><h3 style="font-size:1rem">Types of pile drivers: piling methods and their noise impact</h3><p>Every common method and how loud it is.</p></a>
-      <a class="card" href="/articles/piling-noise-uk-cities-what-residents-can-do"><h3 style="font-size:1rem">Why piling noise is getting louder in UK cities</h3><p>The resident's view: what neighbours expect and what they can ask for.</p></a>
+      <a class="card" href="/articles/pile-driver-noise-uk-cities-what-residents-can-do"><h3 style="font-size:1rem">Why piling noise is getting louder in UK cities</h3><p>The resident's view: what neighbours expect and what they can ask for.</p></a>
       <a class="card" href="/options/acoustic-barriers-up-to-8m"><h3 style="font-size:1rem">Acoustic barriers up to 8 metres high</h3><p>Tall freestanding walls, how high to go, and the alternatives.</p></a>
       <a class="card" href="/ContractorGuide"><h3 style="font-size:1rem">Contractor guide</h3><p>Section 60, Section 61, BS 5228 and measured mitigation results.</p></a>
     </div>

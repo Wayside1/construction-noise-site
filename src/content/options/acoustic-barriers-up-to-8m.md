@@ -32,7 +32,7 @@ A barrier only works if it blocks the line of sight between the noise and the li
 - **Neighbours look down on the site:** flats, offices and houses with upstairs windows
 - **The site is in a city centre:** surrounded by taller buildings, where sound reflects back and forth
 
-In those cases you need either a taller wall or to treat the noise at the machine (see [pile rig shrouds](/options/pile-rig-shrouds) and [rock breaker shrouds](/options/rock-breaker-shrouds)). Often the best answer is both.
+In those cases you need either a taller wall or to treat the noise at the machine (see [pile driver shrouds](/options/pile-driver-shrouds) and [rock breaker shrouds](/options/rock-breaker-shrouds)). Often the best answer is both.
 
 ## How high does the wall need to be?
 
@@ -60,7 +60,7 @@ All three can work. The right one depends on height, how long it's needed, how o
 ## Limits
 
 - **It's airborne noise only.** A wall does nothing for ground vibration.
-- **Very tall sources may still be visible.** A piling hammer near the top of a leader can sit above even an 8 m wall; a [shroud on the hammer](/options/pile-rig-shrouds) or an enclosure round the active pile may be needed as well.
+- **Very tall sources may still be visible.** A piling hammer near the top of a leader can sit above even an 8 m wall; a [shroud on the hammer](/options/pile-driver-shrouds) or an enclosure round the active pile may be needed as well.
 - **Space and access.** Freestanding bases and container walls take up ground. Plan for access, deliveries and emergency routes.
 
 ## What to ask for

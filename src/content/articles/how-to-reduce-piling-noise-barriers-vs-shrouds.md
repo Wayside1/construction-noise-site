@@ -3,8 +3,8 @@ title: "How can piling noise be reduced? Perimeter barriers vs piling shrouds co
 category: product-focus
 published_date: 2026-11-10
 updated_date: 2026-11-13
-meta_title: "How to Reduce Piling Noise: Barriers vs Shrouds"
-meta_description: "Three ways to cut driven piling noise compared: perimeter barriers, freestanding enclosures and rig-mounted shrouds, with measured dB results."
+meta_title: "How to Reduce Pile Driver Noise: Barriers vs Shrouds"
+meta_description: "Three ways to cut pile driver noise compared: perimeter barriers, freestanding enclosures and rig-mounted shrouds, with measured dB results."
 hero_image_url: "/images/pile-shroud-live.webp"
 hero_image_alt: "Piling rig fitted with an acoustic shroud around the hammer, working on a live site among driven concrete piles"
 summary: "Airborne noise from driven piling can be cut in three main ways: a tall barrier around the site perimeter, a freestanding acoustic enclosure around the pile being driven, or a shroud fitted around the hammer itself. Measured results show a rig-mounted shroud taking around 7 dB off at 5 metres, while a freestanding enclosure can achieve 15–21 dB, but it has to be moved from pile to pile."
@@ -29,7 +29,7 @@ sources:
   - { title: "Hushtec – Piling Noise Control (product data and Woodhall Spa field comparison)", url: "https://www.hushtecsolutions.com/uk/" }
   - { title: "Control of Pollution Act 1974, section 61 (legislation.gov.uk)", url: "https://www.legislation.gov.uk/ukpga/1974/40/section/61" }
   - { title: "Control of Pollution Act 1974, section 60 (legislation.gov.uk)", url: "https://www.legislation.gov.uk/ukpga/1974/40/section/60" }
-tags: ["piling", "piling noise", "pile rig shroud", "RapidWall", "acoustic enclosure", "versus"]
+tags: ["piling", "piling noise", "pile driver noise", "pile driver shroud", "RapidWall", "acoustic enclosure", "versus"]
 ---
 
 If there's a piling rig next door, you'll know it. Every blow of the hammer is a sharp, heavy thud, and on a busy day that can mean thousands of them. In a field comparison at Woodhall Spa, an unshrouded driven piling rig measured **100 dB at 5 metres** and still **89.9 dB at 15 metres**.

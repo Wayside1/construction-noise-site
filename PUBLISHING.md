@@ -48,7 +48,9 @@ Body in Markdown. Use ## and ### headings, tables, lists.
 Rules:
 - Quote every string value with double quotes; escape any `"` inside as `\"`. Dates are unquoted `YYYY-MM-DD`.
 - Internal links are root-relative: `/articles/<slug>`, `/ComplaintGuide`, `/ContractorGuide`, `/MachineNoise`, `/NoiseCalculator`, `/LearningCentre`, `/FAQ`, `/GetAssistance`, `/contact`. There is NO `/NoiseLog` page (use `/articles/how-to-record-construction-noise-evidence` instead).
-- Any article that involves piling should link to the piling noise hub, `/piling-noise`. Noise-control option pages live at `/options/<slug>` (acoustic-barriers-up-to-2m, acoustic-barriers-up-to-8m, transparent-acoustic-barriers, rock-breaker-shrouds, pile-rig-shrouds, marine-acoustic-barriers); link to the relevant one when an article discusses that option.
+- Any article that involves piling should link to the pile driver noise hub, `/pile-driver-noise`.
+- Keyword rule: UK searchers use "pile driver noise", not "pile rig noise" (Semrush, Nov 2026: no UK volume for "pile rig noise"). In titles, meta titles, headings and first paragraphs, say "pile driver" / "pile driver noise" / "pile driver shroud". "Pile rig" can appear occasionally in body text as a synonym, never as the main phrase.
+- Noise-control option pages live at `/options/<slug>` (acoustic-barriers-up-to-2m, acoustic-barriers-up-to-8m, transparent-acoustic-barriers, rock-breaker-shrouds, pile-driver-shrouds, marine-acoustic-barriers); link to the relevant one when an article discusses that option.
 - Learning Centre explainers live at `/learning-centre/<slug>` (see `src/content/learning/`).
 
 ### Photos available (real Hushtec photos, never use stock or AI images)
@@ -57,7 +59,7 @@ Rules:
 |---|---|---|
 | `/images/barrier-roadside.webp` | Long roadside run of temporary barrier, operative checking a joint | Barriers, roadworks, boundary screening |
 | `/images/pile-shroud-live.webp` | Piling rig with acoustic shroud on a live site | Piling, foundations |
-| `/images/pile-shroud-yard.webp` | Pile rig shroud close-up in a plant yard | Pile rig shrouds |
+| `/images/pile-shroud-yard.webp` | Pile driver shroud close-up in a plant yard | Pile driver shrouds |
 | `/images/rig-in-enclosure.webp` | Piling rig working inside a stacked barrier enclosure | Screening at source |
 | `/images/enclosure-freestanding.webp` | Free-standing three-sided barrier enclosure (render) | Enclosures, generators, fixed plant, BESS, data centres |
 | `/images/rock-breaker-shroud.webp` | Rock breaker with acoustic shroud | Breakers, demolition |
